@@ -173,15 +173,17 @@ header{
             }
             &__player{
                 position: relative;
-               img[alt="button"]
+               &--click
                {
                    position: absolute;
                    top: 50%;
                    left: 50%;
+                   width: 150px;
+                   height: 150px;
                    transform: translate(-50%, -50%);
+                   background: url('./assets/play.svg');
                }
             }
-           
         }
     }
     &__arrowDown{

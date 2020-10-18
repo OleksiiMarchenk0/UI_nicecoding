@@ -254,12 +254,15 @@ header nav ul li:first-child a {
   position: relative;
 }
 
-.main__content .right__player img[alt="button"] {
+.main__content .right__player--click {
   position: absolute;
   top: 50%;
   left: 50%;
+  width: 150px;
+  height: 150px;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  background: url("./assets/play.svg");
 }
 
 .main__arrowDown {

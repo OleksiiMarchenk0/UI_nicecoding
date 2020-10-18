@@ -95,6 +95,10 @@ header nav ul li a {
   transition: 0.6s;
 }
 
+header nav ul li a.active {
+  border-bottom: 2px solid #5454D4;
+}
+
 header nav ul li:first-child a {
   text-transform: uppercase;
 }
@@ -117,7 +121,7 @@ header nav ul li:first-child a {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   margin-top: 70px;
-  height: 908px;
+  height: calc(100vh -70px);
 }
 
 .main__content .left {
@@ -150,7 +154,7 @@ header nav ul li:first-child a {
 }
 
 .main__content .left__subscribe {
-  margin-top: 120px;
+  margin-top: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -254,14 +258,14 @@ header nav ul li:first-child a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: -85px 0 45px;
+  margin: -65px 0 45px;
 }
 
 .main__arrowDown button {
   background: transparent;
-  border: 1px solid white;
-  padding: 5px;
+  border: 1px solid rgba(231, 231, 231, 0.3);
   border-radius: 50%;
+  padding: 15px;
 }
 
 .team {
@@ -275,7 +279,10 @@ header nav ul li:first-child a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 616px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 88px 0;
 }
 
 .team__members {
@@ -349,7 +356,8 @@ header nav ul li:first-child a {
 }
 
 .contact {
-  height: 693px;
+  padding: 88px 0 50px;
+  height: 85vh;
   background: #252B42;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -361,8 +369,9 @@ header nav ul li:first-child a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .contact__description {

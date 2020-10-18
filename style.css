@@ -1,10 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
-@import url(/Users/oleksiimarchenko/Documents/EthtWorks/fonts.css);
 * {
   margin: 0;
   padding: 0;
   color: #263396;
-  font-family: 'Montserrat',sans-serif;
+  font-family: 'Sen-Regular';
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border: none;
@@ -33,6 +32,8 @@ input[type="submit"] {
 
 body {
   min-height: 200vh;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 
 header {
@@ -204,6 +205,12 @@ header nav ul li:first-child a {
   height: 46px;
   width: 154px;
   color: #fff;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.main__content .left button:hover {
+  background: #2b99cf;
 }
 
 .main__content .left input, .main__content .left button {
@@ -248,6 +255,12 @@ header nav ul li:first-child a {
   border-radius: 50%;
   padding: 10px;
   background: #63C7FF;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.main__content .right .socialButtons button:hover {
+  background: #2b99cf;
 }
 
 .main__content .right__player {
@@ -275,7 +288,7 @@ header nav ul li:first-child a {
   margin: -20vh 0 45px;
 }
 
-.main__arrowDown button {
+.main__arrowDown a {
   background: transparent;
   border: 1px solid rgba(231, 231, 231, 0.3);
   border-radius: 50%;
@@ -442,6 +455,12 @@ header nav ul li:first-child a {
           box-shadow: 0px 12px 44px rgba(56, 165, 219, 0.6);
   color: #fff;
   border-radius: 23px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.contact form input[type="submit"]:hover {
+  background: #2b99cf;
 }
 
 .contact form div {
@@ -532,6 +551,12 @@ footer .footer__wallpaperlink {
           box-shadow: 0px 12px 44px rgba(56, 165, 219, 0.6);
   color: #fff;
   border-radius: 23px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+footer .footer__wallpaperlink:hover {
+  background: #2b99cf;
 }
 
 footer .links {

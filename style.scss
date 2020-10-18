@@ -1,11 +1,10 @@
-@import './variables';
-@import './fonts.css';
+@import './variables'; 
 *{
     margin: 0;
     padding: 0;
     color:$mainColor;
-    font-family: 'Montserrat',sans-serif;
-    //font-family: 'Sen-Bold';
+    //font-family: 'Montserrat',sans-serif;
+    font-family: 'Sen-Regular';
     box-sizing: border-box;  
     border:none;
     outline: none; 
@@ -28,6 +27,8 @@ input[type="submit"]{
 }
 body{
     min-height: 200vh;
+    overflow-y:scroll;
+    scroll-behavior: smooth;
 }
 header{
     position: fixed;
@@ -144,6 +145,10 @@ header{
                 height: 46px;
                 width: 154px;
                 color:#fff;
+                transition: $transition;
+                &:hover{
+                    background: $aquaColorHover;
+                }
             }
             input,button{
                 border:none;
@@ -169,6 +174,10 @@ header{
                     border-radius: 50%;
                     padding: 10px;
                     background: $socialIconColor;
+                    transition: $transition;
+                    &:hover{
+                        background: $aquaColorHover;
+                    }
                 }
             }
             &__player{
@@ -190,7 +199,7 @@ header{
         display: flex;
         justify-content: center;
         margin: -20vh 0 45px;
-        button{
+        a{
             background: transparent;
             border: 1px solid rgba(231, 231, 231,0.3);
             border-radius: 50%;
@@ -297,6 +306,10 @@ header{
             box-shadow: 0px 12px 44px rgba(56, 165, 219, 0.6);
             color:#fff;
             border-radius: 23px;
+            transition: $transition;
+            &:hover{
+                background: $aquaColorHover;
+            }
         }
         div{
             display: flex;
@@ -324,7 +337,6 @@ footer{
     .footer,
     .links{
         width: 100vw;
-       
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -356,7 +368,11 @@ footer{
             background-color: $aquaColor;
             box-shadow: 0px 12px 44px rgba(56, 165, 219, 0.6);
             color:#fff;
-            border-radius: 23px; 
+            border-radius: 23px;
+            transition: $transition;
+            &:hover{
+                background: $aquaColorHover;
+            }
         }
     }
     .links{

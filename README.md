@@ -1,4 +1,4 @@
 # UI_nicecoding
 
 
-Project shows coding skills in area of UI.
+Project shows coding skills in the area of UI.

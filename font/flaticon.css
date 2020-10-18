@@ -33,6 +33,7 @@ margin-left: 0px;
 .flaticon-gear:before { content: "\f100"; }
 .flaticon-down-arrow:before { content: "\f101"; }
 .flaticon-facebook-app-symbol:before { content: "\f102"; }
+.flaticon-facebook-app-symbol-black:before { content: "\f102"; }
 .flaticon-twitter:before { content: "\f103"; }
 .flaticon-linkedin:before { content: "\f104"; }
 .flaticon-close-button:before { content: "\f105"; }
@@ -43,4 +44,17 @@ margin-left: 0px;
 .flaticon-twitter
 {
   color:#fff;
+}
+.flaticon-facebook-app-symbol-black,
+.flaticon-linkedin{
+  color:#000;
+
+}
+.flaticon-facebook-app-symbol-black::before,
+.flaticon-linkedin::before,
+.flaticon-facebook-app-symbol-black::after,
+.flaticon-linkedin::after
+{
+ font-size: 12px;
+
 }

@@ -1,12 +1,30 @@
 @import './variables';
+@import './fonts.css';
 *{
     margin: 0;
     padding: 0;
     color:$mainColor;
     font-family: 'Montserrat',sans-serif;
+    //font-family: 'Sen-Bold';
     box-sizing: border-box;  
     border:none;
     outline: none; 
+    &::before,
+    &::after{
+        box-sizing: border-box;
+    }
+}
+button,
+input[type="submit"]{
+    cursor: pointer;
+}
+[class*="header"]
+{
+    font-size: 16px;
+    line-height: 34px;
+    letter-spacing: $letterSpacing;
+    width: fit-content;
+    text-transform: uppercase;
 }
 body{
     min-height: 200vh;
@@ -153,12 +171,130 @@ header{
     &__arrowDown{
         display: flex;
         justify-content: center;
-        margin-top: -85px;
+        margin: -85px 0 45px;
         button{
             background: transparent;
             border:1px solid white;
             padding: 5px;
-           border-radius: 50%;
+            border-radius: 50%;
+        }
+    }
+}
+.team{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 616px;
+    &__members{
+        margin: 0 20px;
+        display: flex;
+        width: 100vw;
+        justify-content: space-around;
+        div{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 270px;
+            img{
+                border-radius: 50%;
+                width: fit-content;
+            }
+            p{
+                margin: 7px 0;
+                text-align: center;
+                &.name{
+                    color:$aquaColor;
+                }
+                &.position{
+                    color:$lightGray;
+                }
+                &.description{
+                    color:$darkGrayishCyan;
+                }
+            }
+            .social{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                button{
+                    border: 1px solid #7F8B98;
+                    margin: 0 15px;
+                    background: transparent;
+                    border-radius: 3px;
+                    width: 43px;
+                    height: 23px;
+                }
+            }
+        }
+    }
+}
+.contact{
+    height: 693px;
+    background: $darkPurple;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    &__description{
+        font-size: 18px;
+        width: 25%;
+        text-align: center;
+    }
+    &__header,
+    &__description{
+        color:#fff;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 80px 30px 30px;
+        background-color: $formFill;
+        position: static;
+        width: 401px;
+        height: 370px;
+        left: 0px;
+        top: 0px;
+        border-radius: 13px;
+        input[type="text"],
+        input[type="email"],
+        input[type="submit"]
+        {
+            height: 45px;
+            border-radius: $borderRadius;
+            padding: 13px;
+        }
+        input[type="text"],
+        input[type="email"]
+        {
+            width: 100%;
+        }
+        input[type="submit"]
+        {
+            width: 95px;
+            background-color: $aquaColor;
+            box-shadow: 0px 12px 44px rgba(56, 165, 219, 0.6);
+            color:#fff;
+            border-radius: 23px;
+        }
+        div{
+            display: flex;
+            align-items: center;
+            input[type="checkbox"]
+            {
+                width: 24px;
+                height: 24px;
+                background-color: #fff;
+                border-radius: 4px;
+                vertical-align: middle;
+                border: 1px solid #fff;
+                -webkit-appearance: none;
+            }
+            label{
+                margin: 0 10px;
+                color:#fff;
+            }
         }
     }
 }

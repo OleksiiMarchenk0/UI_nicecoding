@@ -1,0 +1,13 @@
+
+@font-face {
+    font-family: "Sen-Bold";
+    src: url("./sen//Webfonts/Sen-Bold.eot");
+    src: url("./sen//Webfonts/Sen-Bold.eot?#iefix") format("embedded-opentype"),
+         url("./sen//Webfonts/Sen-Bold.woff2") format("woff2"),
+         url("./sen//Webfonts/Sen-Bold.woff") format("woff"),
+         url("./sen//Webfonts/Sen-Bold.ttf") format("truetype"),
+         url("./sen//Webfonts/Sen-Bold.svg") format("svg");
+    font-weight: bold;
+    font-style: normal;
+  }
+  

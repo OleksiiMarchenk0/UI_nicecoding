@@ -115,10 +115,10 @@ header nav ul li:first-child a {
 }
 
 .main__content {
-  background: url("./assets/BG.svg");
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  background: url("./assets/BG.svg");
   -ms-flex-pack: distribute;
       justify-content: space-around;
   background-size: cover;
@@ -141,7 +141,7 @@ header nav ul li:first-child a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding-top: 15px;
+  padding: 100px 0 220px;
 }
 
 .main__content .left__message {
@@ -250,8 +250,16 @@ header nav ul li:first-child a {
   background: #63C7FF;
 }
 
-.main__content .right img {
-  border-radius: 25px;
+.main__content .right__player {
+  position: relative;
+}
+
+.main__content .right__player img[alt="button"] {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .main__arrowDown {
@@ -261,7 +269,7 @@ header nav ul li:first-child a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: -25vh 0 45px;
+  margin: -20vh 0 45px;
 }
 
 .main__arrowDown button {

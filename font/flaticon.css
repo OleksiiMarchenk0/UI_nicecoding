@@ -56,5 +56,13 @@ margin-left: 0px;
 .flaticon-linkedin::after
 {
  font-size: 12px;
+}
+.flaticon-close-button{
+  color:#828282;
 
+}
+.flaticon-close-button,
+.flaticon-close-button:before,
+.flaticon-close-button::after{
+  font-size: 10px;
 }

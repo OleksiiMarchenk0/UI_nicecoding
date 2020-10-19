@@ -1,5 +1,6 @@
 @import "./variables";
-/*generic part*/
+
+/* -------------generic part -------------------------  */
 * {
   margin: 0;
   padding: 0;
@@ -41,6 +42,12 @@ input[type="submit"] {
   letter-spacing: 1px;
   font-size: 2em;
 }
+.container{
+  position: relative;
+}
+
+
+
 /*specific part*/
 header {
   position: fixed;
@@ -91,6 +98,7 @@ header {
     top: 50px;
     background-position: 50% 20%;
     min-height: 110vh;
+    
     .left {
       display: flex;
       flex-direction: column;
@@ -390,4 +398,94 @@ footer {
       }
     }
   }
+}
+/* popup for teams members*/
+.popup{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 20px;
+  width: 30vw;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px ;
+  &__closeBtn{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+  }
+  &__close{
+    border-radius: 50%;
+    width: 25px;
+    height: 27px;
+    background: transparent;
+    border:1px solid  $closeButton;
+  }
+  .description{
+    padding: 10px 0;
+    margin: 10px 0;
+    border-radius: 20px;
+    overflow: scroll;
+    height: 100%;
+    width: 100%;
+    &__text{
+      color:$darkGrayishCyan;
+    }
+  }
+  .name{
+    padding: 12px 0;
+    font-size: 40px;
+    color:$aquaColor;
+    text-align: center;
+  }
+  .position{
+    padding: 12px 0;
+    opacity: 0.5;
+    color: $lightGray;
+    font-size: 13px;
+    font-family: "Open-sans", sans-serif;
+  }
+  
+}
+/*TABLET MODE*/
+@media only screen and (max-width: 1025px) {
+.main{
+  &__content{
+    min-height: unset;
+    padding: 0 4vw;
+    .left{
+      &__message{
+        font-size:$fontSizeTablet;
+        padding: 0 3vw 0 0;
+      }
+    }
+    .right{
+      padding: 100px 0 300px 0;
+      &__player{
+        img{
+          width: 100%;
+        }
+      }
+    }
+  }
+  &__arrowDown{
+    margin: -15vh 0 2vh;
+  }
+}
+ .team{
+   //padding: 88px 5vw;
+   &__members{
+     div{
+       width: 25vw;
+     }
+   }
+ } 
+ .contact{
+   min-height: 50vh;
+ }
 }

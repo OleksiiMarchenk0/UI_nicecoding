@@ -303,6 +303,7 @@ header nav ul li:first-child a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  position: relative;
   padding: 88px 0;
 }
 
@@ -345,6 +346,13 @@ header nav ul li:first-child a {
 .team__members div p.name {
   color: #38A5DB;
   font-size: 24px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.team__members div p.name:hover {
+  color: #2b99cf;
+  cursor: pointer;
 }
 
 .team__members div p.position {
@@ -592,6 +600,7 @@ footer .links a:first-child::after {
 
 /* popup for teams members*/
 .popup {
+  display: none;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -599,11 +608,8 @@ footer .links a:first-child::after {
           transform: translate(-50%, -50%);
   background: white;
   border-radius: 20px;
-  width: 30vw;
-  height: 70vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  width: 26vw;
+  height: 71vh;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -666,21 +672,50 @@ footer .links a:first-child::after {
 /*TABLET MODE*/
 @media only screen and (max-width: 1025px) {
   .main__content {
-    min-height: unset;
-    padding: 0 4vw;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 0;
+    min-height: 101vh;
+  }
+  .main__content .left {
+    padding: 10vw;
   }
   .main__content .left__message {
     font-size: 2em;
-    padding: 0 3vw 0 0;
+    padding: 3vw 0 0 0;
+  }
+  .main__content .left__subscribe {
+    margin-top: 100px;
+  }
+  .main__content .left__subscribe p {
+    font-size: 1.5em;
+  }
+  .main__content .left__subscribtionElement {
+    width: 70vw;
+  }
+  .main__content .left__subscribtionElement input {
+    width: 60vw;
   }
   .main__content .right {
-    padding: 100px 0 300px 0;
+    padding: 300px 0 0 0;
+    width: 100vw;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .main__content .right__player {
+    max-width: 40vw;
   }
   .main__content .right__player img {
     width: 100%;
   }
   .main__arrowDown {
-    margin: -15vh 0 2vh;
+    margin: -45vh 0 2vh;
+  }
+  .team {
+    margin: 50vh 0vw 5vw;
   }
   .team__members div {
     width: 25vw;

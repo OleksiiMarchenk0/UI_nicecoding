@@ -37,6 +37,7 @@ input[type="submit"] {
   letter-spacing: $letterSpacing;
   text-transform: uppercase;
 }
+
 .logo {
   font-family: "Montserrat", sans-serif;
   letter-spacing: 1px;
@@ -208,6 +209,7 @@ header {
   display: flex;
   align-items: center;
   flex-direction: column;
+  position: relative;
   padding: 88px 0;
   &__members {
     margin: 0 20px;
@@ -229,6 +231,11 @@ header {
         &.name {
           color: $aquaColor;
           font-size: 24px;
+          transition: $transition;
+          &:hover{
+            color:$aquaColorHover;
+            cursor: pointer;
+          }
         }
         &.position {
           opacity: 0.5;
@@ -401,15 +408,16 @@ footer {
 }
 /* popup for teams members*/
 .popup{
+  display: none;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: white;
   border-radius: 20px;
-  width: 30vw;
-  height: 70vh;
-  display: flex;
+  width: 26vw;
+  height: 71vh;
+  
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -455,18 +463,37 @@ footer {
 /*TABLET MODE*/
 @media only screen and (max-width: 1025px) {
 .main{
+ 
   &__content{
-    min-height: unset;
-    padding: 0 4vw;
+    flex-direction: column;
+    padding:0;
+    min-height: 101vh;
     .left{
+      padding: 10vw;
       &__message{
         font-size:$fontSizeTablet;
-        padding: 0 3vw 0 0;
+        padding:3vw 0 0 0;
+      }
+      &__subscribe{
+        margin-top: 100px;
+        p{
+          font-size: 1.5em;
+        }
+      }
+      &__subscribtionElement{
+        width: 70vw;
+        input{
+          width: 60vw;
+        }
       }
     }
     .right{
-      padding: 100px 0 300px 0;
+     padding: 300px 0 0 0;
+      width: 100vw;
+      align-items: center;
+
       &__player{
+        max-width: 40vw;
         img{
           width: 100%;
         }
@@ -474,11 +501,11 @@ footer {
     }
   }
   &__arrowDown{
-    margin: -15vh 0 2vh;
+    margin: -45vh 0 2vh;
   }
 }
  .team{
-   //padding: 88px 5vw;
+   margin: 50vh 0vw 5vw;
    &__members{
      div{
        width: 25vw;

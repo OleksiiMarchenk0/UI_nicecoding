@@ -56,6 +56,15 @@ input[type="submit"] {
   position: relative;
 }
 
+#popupContainer {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
 /*specific part*/
 header {
   position: fixed;
@@ -237,8 +246,8 @@ header nav ul li:first-child a {
   display: flex;
   position: fixed;
   height: 100px;
-  bottom: 70px;
-  right: 90px;
+  bottom: 5vh;
+  right: 5vw;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -262,6 +271,10 @@ header nav ul li:first-child a {
 
 .main__content .right__player {
   position: relative;
+}
+
+.main__content .right__player img {
+  width: 100%;
 }
 
 .main__content .right__player--click {
@@ -332,6 +345,7 @@ header nav ul li:first-child a {
 }
 
 .team__members div img {
+  width: 100%;
   border-radius: 50%;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -398,7 +412,7 @@ header nav ul li:first-child a {
 }
 
 .contact {
-  padding: 88px 0 50px;
+  padding: 10vh 0 5vh;
   min-height: 85vh;
   background: #252B42;
   display: -webkit-box;
@@ -670,7 +684,74 @@ footer .links a:first-child::after {
 }
 
 /*TABLET MODE*/
-@media only screen and (max-width: 1025px) {
+@media (max-width: 1400px) and (min-width: 1000px) {
+  .contact {
+    padding: 5vh 0 5vh;
+    min-height: 50vh;
+  }
+}
+
+@media (max-width: 1023px) and (min-width: 767px) {
+  .contact {
+    padding: 5vh 0 5vh;
+    min-height: 65vh;
+  }
+  .contact__description {
+    width: 45vw;
+  }
+}
+
+@media (max-width: 550px) and (min-width: 320px) {
+  header,
+  header.sticky {
+    padding: 5px 1vw;
+  }
+  .main__content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 0;
+    min-height: 101vh;
+  }
+  .main__content .left {
+    padding: 10vw;
+  }
+  .main__content .left__message {
+    font-size: 2em;
+    padding: 3vw 0 0 0;
+  }
+  .main__content .left__subscribe {
+    margin-top: 5vh;
+    width: 85vw;
+  }
+  .main__content .left__subscribe p {
+    font-size: 18px;
+  }
+  .main__content .left__subscribtionElement {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .main__content .left__subscribtionElement input, .main__content .left__subscribtionElement button {
+    width: 90vw;
+    margin: 5px 0;
+  }
+  .main__content .left__subscribtionElement button {
+    position: unset;
+  }
+}
+
+@media (max-width: 1025px) and (min-width: 551px) {
+  header,
+  header.sticky {
+    padding: 5px 2vw;
+  }
   .main__content {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -708,9 +789,6 @@ footer .links a:first-child::after {
   .main__content .right__player {
     max-width: 40vw;
   }
-  .main__content .right__player img {
-    width: 100%;
-  }
   .main__arrowDown {
     margin: -45vh 0 2vh;
   }
@@ -720,8 +798,14 @@ footer .links a:first-child::after {
   .team__members div {
     width: 25vw;
   }
-  .contact {
-    min-height: 50vh;
+  footer {
+    padding: 0;
+  }
+  footer .footer {
+    padding: 0 2vw;
+  }
+  footer .links {
+    padding: 6vh 7vw 0vh;
   }
 }
 /*# sourceMappingURL=style.css.map */

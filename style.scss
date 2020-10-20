@@ -43,11 +43,17 @@ input[type="submit"] {
   letter-spacing: 1px;
   font-size: 2em;
 }
-.container{
+.container {
   position: relative;
 }
-
-
+#popupContainer {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
 
 /*specific part*/
 header {
@@ -88,7 +94,7 @@ header {
 }
 .main {
   display: flex;
-   flex-direction: column;
+  flex-direction: column;
   &__content {
     display: flex;
     background: url("./assets/BG.svg");
@@ -99,7 +105,7 @@ header {
     top: 50px;
     background-position: 50% 20%;
     min-height: 110vh;
-    
+
     .left {
       display: flex;
       flex-direction: column;
@@ -139,7 +145,7 @@ header {
         width: 480px;
         height: 46px;
         border-radius: $borderRadius;
-        padding: 20px;  
+        padding: 20px;
       }
       button {
         height: 46px;
@@ -165,8 +171,8 @@ header {
         display: flex;
         position: fixed;
         height: 100px;
-        bottom: 70px;
-        right: 90px;
+        bottom: 5vh;
+        right: 5vw;
         flex-direction: column;
         justify-content: space-between;
         button {
@@ -181,6 +187,9 @@ header {
       }
       &__player {
         position: relative;
+        img{
+          width: 100%;
+        }
         &--click {
           position: absolute;
           top: 50%;
@@ -222,6 +231,7 @@ header {
       align-items: center;
       width: 270px;
       img {
+        width: 100%;
         border-radius: 50%;
         width: fit-content;
       }
@@ -232,8 +242,8 @@ header {
           color: $aquaColor;
           font-size: 24px;
           transition: $transition;
-          &:hover{
-            color:$aquaColorHover;
+          &:hover {
+            color: $aquaColorHover;
             cursor: pointer;
           }
         }
@@ -262,7 +272,7 @@ header {
           background: transparent;
           border-radius: 3px;
           transition: $transition;
-          &:hover{
+          &:hover {
             border: 1px solid $darkGrayishCyan;
           }
         }
@@ -271,7 +281,7 @@ header {
   }
 }
 .contact {
-  padding: 88px 0 50px;
+  padding: 10vh 0 5vh;
   min-height: 85vh;
   background: $darkPurple;
   display: flex;
@@ -357,8 +367,8 @@ footer {
     flex-direction: row;
     align-items: center;
     p,
-    a:not(.logo){
-        font-size: 18px;
+    a:not(.logo) {
+      font-size: 18px;
     }
   }
   .footer {
@@ -390,7 +400,7 @@ footer {
     }
   }
   .links {
-    padding:40px 250px;
+    padding: 40px 250px;
     justify-content: space-around;
     p,
     a {
@@ -407,7 +417,7 @@ footer {
   }
 }
 /* popup for teams members*/
-.popup{
+.popup {
   display: none;
   position: absolute;
   top: 50%;
@@ -417,102 +427,166 @@ footer {
   border-radius: 20px;
   width: 26vw;
   height: 71vh;
-  
+
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px ;
-  &__closeBtn{
+  padding: 20px;
+  &__closeBtn {
     display: flex;
     width: 100%;
     justify-content: flex-end;
   }
-  &__close{
+  &__close {
     border-radius: 50%;
     width: 25px;
     height: 27px;
     background: transparent;
-    border:1px solid  $closeButton;
+    border: 1px solid $closeButton;
   }
-  .description{
+  .description {
     padding: 10px 0;
     margin: 10px 0;
     border-radius: 20px;
     overflow: scroll;
     height: 100%;
     width: 100%;
-    &__text{
-      color:$darkGrayishCyan;
+    &__text {
+      color: $darkGrayishCyan;
     }
   }
-  .name{
+  .name {
     padding: 12px 0;
     font-size: 40px;
-    color:$aquaColor;
+    color: $aquaColor;
     text-align: center;
   }
-  .position{
+  .position {
     padding: 12px 0;
     opacity: 0.5;
     color: $lightGray;
     font-size: 13px;
     font-family: "Open-sans", sans-serif;
   }
-  
 }
 /*TABLET MODE*/
-@media only screen and (max-width: 1025px) {
-.main{
- 
-  &__content{
-    flex-direction: column;
-    padding:0;
-    min-height: 101vh;
-    .left{
-      padding: 10vw;
-      &__message{
-        font-size:$fontSizeTablet;
-        padding:3vw 0 0 0;
-      }
-      &__subscribe{
-        margin-top: 100px;
-        p{
-          font-size: 1.5em;
+@media (max-width: 1400px) and (min-width: 1000px) {
+  .contact {
+    padding: 5vh 0 5vh;
+    min-height: 50vh;
+  }
+}
+@media (max-width: 1023px) and (min-width: 767px) {
+  .contact {
+    padding: 5vh 0 5vh;
+    min-height: 65vh;
+    &__description {
+      width: 45vw;
+    }
+  }
+}
+@media (max-width: 550px) and (min-width: 320px) {
+  header,
+  header.sticky {
+    padding: 5px 1vw;
+  }
+  .main {
+    &__content {
+      flex-direction: column;
+      padding: 0;
+      min-height: 101vh;
+      .left {
+        padding: 10vw;
+        &__message {
+          font-size: $fontSizeTablet;
+          padding: 3vw 0 0 0;
+        }
+        &__subscribe {
+          margin-top: 5vh;
+          width: 85vw;
+        p {
+          font-size: 18px;
         }
       }
-      &__subscribtionElement{
-        width: 70vw;
-        input{
-          width: 60vw;
+      &__subscribtionElement {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        input,button {
+          width: 90vw;
+          margin: 5px 0;
+        }
+        button{
+          position: unset;
         }
       }
     }
-    .right{
-     padding: 300px 0 0 0;
-      width: 100vw;
-      align-items: center;
+    
+    }
+  }
+}
+@media (max-width: 1025px) and (min-width: 551px) {
+  header,
+  header.sticky {
+    padding: 5px 2vw;
+  }
+  .main {
+    &__content {
+      flex-direction: column;
+      padding: 0;
+      min-height: 101vh;
+      .left {
+        padding: 10vw;
+        &__message {
+          font-size: $fontSizeTablet;
+          padding: 3vw 0 0 0;
+        }
+        &__subscribe {
+          margin-top: 100px;
+          p {
+            font-size: 1.5em;
+          }
+        }
+        &__subscribtionElement {
+          width: 70vw;
+          input {
+            width: 60vw;
+          }
+        }
+      }
+      .right {
+        padding: 300px 0 0 0;
+        width: 100vw;
+        align-items: center;
 
-      &__player{
-        max-width: 40vw;
-        img{
-          width: 100%;
+        &__player {
+          max-width: 40vw;
+          // img {
+          //   width: 100%;
+          // }
         }
       }
     }
+    &__arrowDown {
+      margin: -45vh 0 2vh;
+    }
   }
-  &__arrowDown{
-    margin: -45vh 0 2vh;
+  .team {
+    margin: 50vh 0vw 5vw;
+    &__members {
+      div {
+        width: 25vw;
+      }
+    }
+  }
+  footer {
+    padding: 0;
+    .footer {
+      padding: 0 2vw;
+    }
+    .links {
+      padding: 6vh 7vw 0vh;
+    }
   }
 }
- .team{
-   margin: 50vh 0vw 5vw;
-   &__members{
-     div{
-       width: 25vw;
-     }
-   }
- } 
- .contact{
-   min-height: 50vh;
- }
-}
+

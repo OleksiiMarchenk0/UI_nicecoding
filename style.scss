@@ -21,7 +21,6 @@ a {
   text-decoration: none;
   line-height: 24px;
   &:before{
-  //&:after{
     content: "";
     position: absolute;
     transition: transform $transition ease;
@@ -55,7 +54,6 @@ input[type="submit"] {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-/*specific part*/
 header {
   position: fixed;
   width: 100%;
@@ -79,9 +77,9 @@ header {
           position: relative;
           margin: 0 15px;
           letter-spacing: 2px;
-          &.active {
-            border-bottom: 2px solid #5454d4;
-          }
+            &.active {
+              border-bottom: 2px solid #5454d4;
+            }
         }
         &:first-child {
           a {
@@ -120,7 +118,6 @@ header {
         font-weight: 700;
         line-height: 56px;
         letter-spacing: 0.2px;
-        text-align: left;
       }
       &__subscribe {
         margin-top: 60px;
@@ -129,7 +126,6 @@ header {
         height: 95px;
         justify-content: space-between;
         flex-direction: column;
-        color: #fff;
         p {
           color: #fff;
           opacity: 0.7;
@@ -166,7 +162,7 @@ header {
       flex-direction: column;
       position: relative;
       justify-content: center;
-      padding: 0 0 300px 0;
+      padding: 0 0 30vh 0;
       .socialButtons {
         display: flex;
         position: fixed;
@@ -223,15 +219,15 @@ header {
   padding: 88px 0;
   overflow-x:scroll;
   &__members {
-    margin: 0 20px;
+    padding:20px;
     display: flex;
-    width: 100vw;
+    max-width: 100vw;
     justify-content: space-around;
     div {
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: 270px;
+      min-width: 25%;
       img {
         width: 100%;
         border-radius: 50%;
@@ -257,6 +253,7 @@ header {
         }
         &.description {
           color: $darkGrayishCyan;
+          padding: 15px;
           font-size: 18px;
           line-height: 24px;
         }
@@ -368,6 +365,7 @@ footer {
     display: flex;
     flex-direction: row;
     align-items: center;
+    padding: 10vh 20vw;
     &__layer1
     &__layer2{
       p,
@@ -417,16 +415,22 @@ footer {
       justify-content:space-around; 
     }
     &__layer1{
+      p,a{
+        color: $darkGrayishCyan;
+      }
       p{
         margin: 3px 0 0 0;
-      }
-      p,a {
-        color: $darkGrayishCyan;
         &:after
         {
           content:"|";
-          margin-left: 5vw;
-          
+          margin-left: 5vw; 
+        }
+      }
+      a {
+        &:after
+        {
+          content:"|";
+          margin-left: 7vw; 
         }
       }
     }
@@ -445,15 +449,14 @@ footer {
 /* popup for teams members*/
 .popup {
   display: none;
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: white;
   border-radius: 20px;
-  width: 26vw;
-  height: 71vh;
-
+  width: 40vw;
+  height: 90vh;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -463,7 +466,7 @@ footer {
     width: 100%;
     justify-content: flex-end;
   }
-  &__close {
+  [id*="btn-"] {
     border-radius: 50%;
     width: 25px;
     height: 27px;
@@ -479,6 +482,7 @@ footer {
     width: 100%;
     &__text {
       color: $darkGrayishCyan;
+      font-size: 17px;
     }
   }
   .name {
@@ -569,7 +573,7 @@ footer {
     }
   }
   .team{
-    margin: 35vh 0 10vh;
+    padding: 35vh 0 10vh;
   }
   .contact{
     &__description{
@@ -712,10 +716,16 @@ footer {
     }
   }
   .team {
-    margin: 35vh 0vw 5vw;
+    margin: 45vh 0vw 5vw;
     &__members {
+      max-width:100%;
+      display: flex;
+     width: unset;
+      overflow-x: scroll;
+      margin: 0;
+      justify-content: unset;
       div {
-        width: 25vw;
+        min-width:40vw;
       }
     }
   }

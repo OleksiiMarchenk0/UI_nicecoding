@@ -65,7 +65,6 @@ input[type="submit"] {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-/*specific part*/
 header {
   position: fixed;
   width: 100%;
@@ -165,7 +164,6 @@ header nav ul li:first-child a {
   font-weight: 700;
   line-height: 56px;
   letter-spacing: 0.2px;
-  text-align: left;
 }
 
 .main__content .left__subscribe {
@@ -182,7 +180,6 @@ header nav ul li:first-child a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  color: #fff;
 }
 
 .main__content .left__subscribe p {
@@ -237,7 +234,7 @@ header nav ul li:first-child a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 0 0 300px 0;
+  padding: 0 0 30vh 0;
 }
 
 .main__content .right .socialButtons {
@@ -323,11 +320,11 @@ header nav ul li:first-child a {
 }
 
 .team__members {
-  margin: 0 20px;
+  padding: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100vw;
+  max-width: 100vw;
   -ms-flex-pack: distribute;
       justify-content: space-around;
 }
@@ -343,7 +340,7 @@ header nav ul li:first-child a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 270px;
+  min-width: 25%;
 }
 
 .team__members div img {
@@ -380,6 +377,7 @@ header nav ul li:first-child a {
 
 .team__members div p.description {
   color: #45515F;
+  padding: 15px;
   font-size: 18px;
   line-height: 24px;
 }
@@ -537,6 +535,7 @@ footer .links {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 10vh 20vw;
 }
 
 footer .footer__layer1 footer .footer__layer2 p,
@@ -625,17 +624,22 @@ footer .links__layer1, footer .links__layer2 {
       justify-content: space-around;
 }
 
-footer .links__layer1 p {
-  margin: 3px 0 0 0;
-}
-
 footer .links__layer1 p, footer .links__layer1 a {
   color: #45515F;
 }
 
-footer .links__layer1 p:after, footer .links__layer1 a:after {
+footer .links__layer1 p {
+  margin: 3px 0 0 0;
+}
+
+footer .links__layer1 p:after {
   content: "|";
   margin-left: 5vw;
+}
+
+footer .links__layer1 a:after {
+  content: "|";
+  margin-left: 7vw;
 }
 
 footer .links__layer2 a {
@@ -650,15 +654,15 @@ footer .links__layer2 a:not(:last-child):after {
 /* popup for teams members*/
 .popup {
   display: none;
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   background: white;
   border-radius: 20px;
-  width: 26vw;
-  height: 71vh;
+  width: 40vw;
+  height: 90vh;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -682,7 +686,7 @@ footer .links__layer2 a:not(:last-child):after {
           justify-content: flex-end;
 }
 
-.popup__close {
+.popup [id*="btn-"] {
   border-radius: 50%;
   width: 25px;
   height: 27px;
@@ -701,6 +705,7 @@ footer .links__layer2 a:not(:last-child):after {
 
 .popup .description__text {
   color: #45515F;
+  font-size: 17px;
 }
 
 .popup .name {
@@ -800,7 +805,7 @@ footer .links__layer2 a:not(:last-child):after {
     margin: -60vh 0 10vh;
   }
   .team {
-    margin: 35vh 0 10vh;
+    padding: 35vh 0 10vh;
   }
   .contact__description {
     width: 90vw;
@@ -959,10 +964,22 @@ footer .links__layer2 a:not(:last-child):after {
     margin: -50vh 0 2vh;
   }
   .team {
-    margin: 35vh 0vw 5vw;
+    margin: 45vh 0vw 5vw;
+  }
+  .team__members {
+    max-width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: unset;
+    overflow-x: scroll;
+    margin: 0;
+    -webkit-box-pack: unset;
+        -ms-flex-pack: unset;
+            justify-content: unset;
   }
   .team__members div {
-    width: 25vw;
+    min-width: 40vw;
   }
   footer {
     padding: 0;

@@ -1,0 +1,10 @@
+@mixin no-separator {
+  content: "";
+  margin: 0 3vw;
+  color: $separatorsColor;
+  }
+  @mixin footer-separator-links($marginLeft){
+    content: "|";
+    margin-left: $marginLeft;
+  }
+ 

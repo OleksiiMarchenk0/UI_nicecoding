@@ -298,7 +298,7 @@ header nav ul li:first-child a {
 
 .main__arrowDown a {
   background: transparent;
-  border: 1px solid rgba(231, 231, 231, 0.3);
+  border: 2px solid rgba(231, 231, 231, 0.3);
   border-radius: 50%;
   padding: 15px;
 }
@@ -624,7 +624,8 @@ footer .links__layer1, footer .links__layer2 {
       justify-content: space-around;
 }
 
-footer .links__layer1 p, footer .links__layer1 a {
+footer .links__layer1 p,
+footer .links__layer1 a {
   color: #45515F;
 }
 
@@ -741,6 +742,195 @@ footer .links__layer2 a:not(:last-child):after {
   }
 }
 
+@media (max-width: 420px) and (min-width: 321px) {
+  .main__content {
+    min-height: 110vh;
+  }
+  .main__arrowDown {
+    margin: -50vh 0 10vh;
+  }
+  .team {
+    margin: 35vh 0 5vh;
+  }
+  .contact form {
+    height: 40vh;
+  }
+  .contact form input[type="text"],
+  .contact form input[type="email"],
+  .contact form input[type="submit"] {
+    height: 5vh;
+  }
+}
+
+@media (max-width: 1025px) and (min-width: 551px) {
+  header,
+  header.sticky {
+    padding: 5px 2vw;
+  }
+  .main__content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 0;
+    min-height: 101vh;
+  }
+  .main__content .left {
+    padding: 10vw;
+  }
+  .main__content .left__message {
+    font-size: xx-large;
+    padding: 3vw 0 0 0;
+  }
+  .main__content .left__subscribe {
+    margin-top: 100px;
+  }
+  .main__content .left__subscribe p {
+    font-size: 1.5em;
+  }
+  .main__content .left__subscribtionElement {
+    width: 70vw;
+  }
+  .main__content .left__subscribtionElement input {
+    width: 60vw;
+  }
+  .main__content .right {
+    padding: 300px 0 0 0;
+    width: 100vw;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .main__content .right__player {
+    max-width: 65vw;
+  }
+  .main__arrowDown {
+    margin: -50vh 0 2vh;
+  }
+  .team {
+    margin: 45vh 0vw 5vw;
+  }
+  .team__members {
+    max-width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: unset;
+    overflow-x: scroll;
+    margin: 0;
+    -webkit-box-pack: unset;
+        -ms-flex-pack: unset;
+            justify-content: unset;
+  }
+  .team__members div {
+    min-width: 40vw;
+  }
+  footer {
+    padding: 0;
+  }
+  footer .footer {
+    padding: 0 2vw;
+  }
+  footer .links {
+    padding: 6vh 7vw 0vh;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  footer .links__layer1 p:after,
+  footer .links__layer1 a:after {
+    margin-left: 3vw;
+  }
+  footer .links__layer2 a:not(:last-child):after {
+    content: "|";
+    margin-left: 3vw;
+  }
+  .popup {
+    width: 70vw;
+  }
+  .popup .description__text {
+    font-size: xx-large;
+  }
+}
+
+@media (max-width: 1000px) {
+  footer p,
+  footer a {
+    font-size: small;
+  }
+}
+
+/*ok*/
+@media (max-width: 319px) {
+  header a.logo, header.sticky a.logo {
+    font-size: medium;
+  }
+  header nav ul li a, header.sticky nav ul li a {
+    font-size: small;
+  }
+  .main__content {
+    min-height: 95vh;
+  }
+  .main__content .left__message {
+    font-size: large;
+  }
+  .main__content .left__subscribtionElement {
+    width: unset;
+  }
+  .main__content .left__subscribtionElement input {
+    width: 90vw;
+  }
+  .main__content .left__subscribe {
+    margin-top: 2vh;
+  }
+  .main__content .left__subscribe p {
+    font-size: small;
+  }
+  .main__content .right {
+    padding: 0;
+  }
+  .main__arrowDown {
+    margin: -43vh 0 2vh;
+  }
+  .main__arrowDown a {
+    padding: 10px;
+  }
+  .main__arrowDown a i::before {
+    font-size: 15px;
+  }
+  .team {
+    margin: 35vh 0vw 5vw;
+  }
+  footer .footer {
+    padding: 2vh 2vw;
+  }
+  footer .footer__logoContainer a.logo {
+    font-size: medium;
+  }
+  footer .links {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .popup .description__text {
+    font-size: medium;
+  }
+}
+
+@media (max-width: 500px) and (min-width: 400px) {
+  .main__content {
+    min-height: 100vh;
+  }
+  .main__arrowDown {
+    margin: -47vh 0 10vh;
+  }
+}
+
 @media (max-width: 550px) and (min-width: 280px) {
   header,
   header.sticky {
@@ -805,7 +995,21 @@ footer .links__layer2 a:not(:last-child):after {
     margin: -60vh 0 10vh;
   }
   .team {
-    padding: 35vh 0 10vh;
+    padding: 0;
+    margin: 55vh 0vw 5vw;
+  }
+  .team__members {
+    -webkit-box-pack: unset;
+        -ms-flex-pack: unset;
+            justify-content: unset;
+  }
+  .team__members div {
+    min-width: 100%;
+    padding: 0 20px;
+  }
+  .contact {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
   }
   .contact__description {
     width: 90vw;
@@ -814,7 +1018,6 @@ footer .links__layer2 a:not(:last-child):after {
   .contact form {
     width: 80vw;
     height: 50vh;
-    padding: 5vh 5vh 7vh;
   }
   .contact form input[type="text"],
   .contact form input[type="submit"],
@@ -915,115 +1118,6 @@ footer .links__layer2 a:not(:last-child):after {
   }
   .popup .name {
     font-size: large;
-  }
-}
-
-@media (max-width: 1025px) and (min-width: 551px) {
-  header,
-  header.sticky {
-    padding: 5px 2vw;
-  }
-  .main__content {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    padding: 0;
-    min-height: 101vh;
-  }
-  .main__content .left {
-    padding: 10vw;
-  }
-  .main__content .left__message {
-    font-size: xx-large;
-    padding: 3vw 0 0 0;
-  }
-  .main__content .left__subscribe {
-    margin-top: 100px;
-  }
-  .main__content .left__subscribe p {
-    font-size: 1.5em;
-  }
-  .main__content .left__subscribtionElement {
-    width: 70vw;
-  }
-  .main__content .left__subscribtionElement input {
-    width: 60vw;
-  }
-  .main__content .right {
-    padding: 300px 0 0 0;
-    width: 100vw;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .main__content .right__player {
-    max-width: 65vw;
-  }
-  .main__arrowDown {
-    margin: -50vh 0 2vh;
-  }
-  .team {
-    margin: 45vh 0vw 5vw;
-  }
-  .team__members {
-    max-width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    width: unset;
-    overflow-x: scroll;
-    margin: 0;
-    -webkit-box-pack: unset;
-        -ms-flex-pack: unset;
-            justify-content: unset;
-  }
-  .team__members div {
-    min-width: 40vw;
-  }
-  footer {
-    padding: 0;
-  }
-  footer .footer {
-    padding: 0 2vw;
-  }
-  footer .links {
-    padding: 6vh 7vw 0vh;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-  footer .links__layer1 p:after, footer .links__layer1 a:after {
-    margin-left: 3vw;
-  }
-  footer .links__layer2 a:not(:last-child):after {
-    content: "|";
-    margin-left: 3vw;
-  }
-  .popup {
-    width: 70vw;
-  }
-  .popup .description__text {
-    font-size: xx-large;
-  }
-}
-
-@media (max-width: 1000px) {
-  footer p, footer a {
-    font-size: small;
-  }
-}
-
-@media (max-width: 500px) and (min-width: 400px) {
-  .main__content {
-    min-height: 100vh;
-  }
-  .main__arrowDown {
-    margin: -47vh 0 10vh;
   }
 }
 /*# sourceMappingURL=style.css.map */

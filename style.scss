@@ -20,8 +20,8 @@ a {
   color: inherit;
   text-decoration: none;
   line-height: 24px;
-  &:before,
-  &:after {
+  &:before{
+  //&:after{
     content: "";
     position: absolute;
     transition: transform $transition ease;
@@ -187,8 +187,9 @@ header {
       }
       &__player {
         position: relative;
-        img{
+        img {
           width: 100%;
+          border-radius: 10px;
         }
         &--click {
           position: absolute;
@@ -220,6 +221,7 @@ header {
   flex-direction: column;
   position: relative;
   padding: 88px 0;
+  overflow-x:scroll;
   &__members {
     margin: 0 20px;
     display: flex;
@@ -290,7 +292,7 @@ header {
   justify-content: space-between;
   &__description {
     font-size: 18px;
-    width: 25%;
+    width: 40vw;
     text-align: center;
   }
   &__header,
@@ -366,10 +368,14 @@ footer {
     display: flex;
     flex-direction: row;
     align-items: center;
-    p,
-    a:not(.logo) {
-      font-size: 18px;
+    &__layer1
+    &__layer2{
+      p,
+      a:not(.logo) {
+        font-size: 18px;
+      }
     }
+   
   }
   .footer {
     justify-content: space-between;
@@ -401,17 +407,37 @@ footer {
   }
   .links {
     padding: 40px 250px;
-    justify-content: space-around;
-    p,
-    a {
-      color: $darkGrayishCyan;
-      &:not(:last-child)::after {
-        content: "|";
-        margin: 0 3vw;
-        color: $separatorsColor;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    &__layer1, &__layer2{
+      display: flex;
+      flex-direction: row;
+      width: 30vw;
+      justify-content:space-around; 
+    }
+    &__layer1{
+      p{
+        margin: 3px 0 0 0;
       }
-      &:first-child::after {
-        margin: 0 0 0 6vw;
+      p,a {
+        color: $darkGrayishCyan;
+        &:after
+        {
+          content:"|";
+          margin-left: 5vw;
+          
+        }
+      }
+    }
+    &__layer2{
+      a {
+        color: $darkGrayishCyan;
+        &:not(:last-child):after
+        {
+          content:"|";
+          margin-left: 5vw;
+        }
       }
     }
   }
@@ -484,44 +510,158 @@ footer {
       width: 45vw;
     }
   }
+ 
 }
-@media (max-width: 550px) and (min-width: 320px) {
+@media (max-width: 550px) and (min-width: 280px) {
   header,
   header.sticky {
     padding: 5px 1vw;
+    a.logo{
+      font-size: x-large;
+    }
   }
   .main {
     &__content {
       flex-direction: column;
       padding: 0;
-      min-height: 101vh;
+      min-height: 130vh;
       .left {
         padding: 10vw;
         &__message {
           font-size: $fontSizeTablet;
+
           padding: 3vw 0 0 0;
+          line-height: 32px;
+
         }
         &__subscribe {
           margin-top: 5vh;
           width: 85vw;
-        p {
-          font-size: 18px;
+          p {
+            font-size: 18px;
+          }
+        }
+        &__subscribtionElement {
+          flex-direction: column;
+          width: 100%;
+          align-items: center;
+          input,
+          button {
+            width: 90vw;
+            margin: 5px 0;
+            font-size: small;
+          }
+          button {
+            position: unset;
+          }
         }
       }
-      &__subscribtionElement {
-        flex-direction: column;
-        width: 100%;
+      .right{
+        padding: 0;
         align-items: center;
-        input,button {
-          width: 90vw;
-          margin: 5px 0;
-        }
-        button{
-          position: unset;
+        &__player{
+        width: 60vw;
         }
       }
     }
-    
+    &__arrowDown{
+      margin: -60vh 0 10vh;
+    }
+  }
+  .team{
+    margin: 35vh 0 10vh;
+  }
+  .contact{
+    &__description{
+      width: 90vw;
+      font-size: small;
+    }
+    form{
+      width: 80vw;
+      height: 50vh;
+      padding: 5vh 5vh 7vh ;
+      input[type="text"],
+      input[type="submit"],
+      input[type="email"]{
+        height: 7vh;
+        font-size: small;
+      }
+    }
+  }
+  footer{
+    height: fit-content;
+    .footer{
+      flex-direction: column;
+      padding: 2vh 1vw;
+      &__logoContainer
+      {
+        a.logo{
+          font-size: x-large;
+        }
+        width:100%;
+      }
+      &__email{
+        margin: 0;
+        *{
+          margin: 0;
+        }
+       
+      }
+      &__wallpaperlink{
+        width: 40vw;
+        height: 5vh;
+        margin-top: 3vh;
+        font-size: small;
+        padding: 0;
+      }
+    }
+    .links{
+      padding: 2vh 10px;
+      background:#fff;
+      flex-direction: column;
+      font-size: 12px;
+      &__layer1,&__layer2{width: 100%;}
+      &__layer1{
+        flex-direction: row;
+        p,
+        a {
+          color: $darkGrayishCyan;
+          &::after {
+            content: "";
+            margin: 0 3vw;
+            color: $separatorsColor;
+          }
+          &:first-child::after {
+            margin: 0 0 0 6vw;
+          }
+        }
+      }
+       &__layer2{
+        flex-direction: row;
+        padding-left: 7vw;
+        p,
+        a {
+          color: $darkGrayishCyan;
+          &::after {
+            content: "";
+            margin: 0 3vw;
+            color: $separatorsColor;
+          }
+          &:not(:last-child):after
+          {
+            content:""
+          }
+          &:first-child::after {
+            margin: 0 0 0 6vw;
+          }
+        }
+      }
+    }
+  }
+  .popup{
+    width: 90vw;
+    .name{
+      font-size: large;
     }
   }
 }
@@ -538,7 +678,7 @@ footer {
       .left {
         padding: 10vw;
         &__message {
-          font-size: $fontSizeTablet;
+          font-size: xx-large;
           padding: 3vw 0 0 0;
         }
         &__subscribe {
@@ -560,7 +700,7 @@ footer {
         align-items: center;
 
         &__player {
-          max-width: 40vw;
+          max-width: 65vw;
           // img {
           //   width: 100%;
           // }
@@ -568,11 +708,11 @@ footer {
       }
     }
     &__arrowDown {
-      margin: -45vh 0 2vh;
+      margin: -50vh 0 2vh;
     }
   }
   .team {
-    margin: 50vh 0vw 5vw;
+    margin: 35vh 0vw 5vw;
     &__members {
       div {
         width: 25vw;
@@ -586,7 +726,54 @@ footer {
     }
     .links {
       padding: 6vh 7vw 0vh;
+      flex-direction: row;
+      justify-content:center;
+       &__layer1{
+      p,a {
+        &:after
+        {
+          margin-left: 3vw;
+          
+        }
+      }
+    }
+    &__layer2{
+      a {
+        &:not(:last-child):after
+        {
+          content:"|";
+          margin-left: 3vw;
+        }
+      }
+    }
     }
   }
+  .popup{
+    width:70vw;
+    .description
+    {
+      &__text{
+        font-size: xx-large;
+      }
+    }
+  }
+}
+@media (max-width: 1000px)
+{
+  footer{
+    p,a{
+      font-size: small;
+    }
+  }
+}
+@media (max-width: 500px) and (min-width: 400px) {
+.main{
+  &__content{
+    min-height: 100vh;
+  }
+  &__arrowDown{
+    margin:-47vh 0 10vh;
+  }
+}
 }
 

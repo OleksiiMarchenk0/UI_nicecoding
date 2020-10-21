@@ -25,7 +25,7 @@ a {
   line-height: 24px;
 }
 
-a:before, a:after {
+a:before {
   content: "";
   position: absolute;
   -webkit-transition: -webkit-transform 0.3s ease;
@@ -275,6 +275,7 @@ header nav ul li:first-child a {
 
 .main__content .right__player img {
   width: 100%;
+  border-radius: 10px;
 }
 
 .main__content .right__player--click {
@@ -318,6 +319,7 @@ header nav ul li:first-child a {
           flex-direction: column;
   position: relative;
   padding: 88px 0;
+  overflow-x: scroll;
 }
 
 .team__members {
@@ -432,7 +434,7 @@ header nav ul li:first-child a {
 
 .contact__description {
   font-size: 18px;
-  width: 25%;
+  width: 40vw;
   text-align: center;
 }
 
@@ -537,10 +539,17 @@ footer .links {
           align-items: center;
 }
 
-footer .footer p,
-footer .footer a:not(.logo),
-footer .links p,
-footer .links a:not(.logo) {
+footer .footer__layer1 footer .footer__layer2 p,
+footer .footer__layer1 footer .footer__layer2 a:not(.logo),
+footer .links__layer1 footer .footer__layer2 p,
+footer .links__layer1 footer .footer__layer2 a:not(.logo), footer .footer__layer1
+footer .links__layer2 p,
+footer .footer__layer1
+footer .links__layer2 a:not(.logo),
+footer .links__layer1
+footer .links__layer2 p,
+footer .links__layer1
+footer .links__layer2 a:not(.logo) {
   font-size: 18px;
 }
 
@@ -591,25 +600,51 @@ footer .footer__wallpaperlink:hover {
 
 footer .links {
   padding: 40px 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+footer .links__layer1, footer .links__layer2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 30vw;
   -ms-flex-pack: distribute;
       justify-content: space-around;
 }
 
-footer .links p,
-footer .links a {
+footer .links__layer1 p {
+  margin: 3px 0 0 0;
+}
+
+footer .links__layer1 p, footer .links__layer1 a {
   color: #45515F;
 }
 
-footer .links p:not(:last-child)::after,
-footer .links a:not(:last-child)::after {
+footer .links__layer1 p:after, footer .links__layer1 a:after {
   content: "|";
-  margin: 0 3vw;
-  color: #9CA4C7;
+  margin-left: 5vw;
 }
 
-footer .links p:first-child::after,
-footer .links a:first-child::after {
-  margin: 0 0 0 6vw;
+footer .links__layer2 a {
+  color: #45515F;
+}
+
+footer .links__layer2 a:not(:last-child):after {
+  content: "|";
+  margin-left: 5vw;
 }
 
 /* popup for teams members*/
@@ -701,10 +736,14 @@ footer .links a:first-child::after {
   }
 }
 
-@media (max-width: 550px) and (min-width: 320px) {
+@media (max-width: 550px) and (min-width: 280px) {
   header,
   header.sticky {
     padding: 5px 1vw;
+  }
+  header a.logo,
+  header.sticky a.logo {
+    font-size: x-large;
   }
   .main__content {
     -webkit-box-orient: vertical;
@@ -712,14 +751,15 @@ footer .links a:first-child::after {
         -ms-flex-direction: column;
             flex-direction: column;
     padding: 0;
-    min-height: 101vh;
+    min-height: 130vh;
   }
   .main__content .left {
     padding: 10vw;
   }
   .main__content .left__message {
-    font-size: 2em;
+    font-size: 24px;
     padding: 3vw 0 0 0;
+    line-height: 32px;
   }
   .main__content .left__subscribe {
     margin-top: 5vh;
@@ -738,12 +778,138 @@ footer .links a:first-child::after {
         -ms-flex-align: center;
             align-items: center;
   }
-  .main__content .left__subscribtionElement input, .main__content .left__subscribtionElement button {
+  .main__content .left__subscribtionElement input,
+  .main__content .left__subscribtionElement button {
     width: 90vw;
     margin: 5px 0;
+    font-size: small;
   }
   .main__content .left__subscribtionElement button {
     position: unset;
+  }
+  .main__content .right {
+    padding: 0;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .main__content .right__player {
+    width: 60vw;
+  }
+  .main__arrowDown {
+    margin: -60vh 0 10vh;
+  }
+  .team {
+    margin: 35vh 0 10vh;
+  }
+  .contact__description {
+    width: 90vw;
+    font-size: small;
+  }
+  .contact form {
+    width: 80vw;
+    height: 50vh;
+    padding: 5vh 5vh 7vh;
+  }
+  .contact form input[type="text"],
+  .contact form input[type="submit"],
+  .contact form input[type="email"] {
+    height: 7vh;
+    font-size: small;
+  }
+  footer {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  footer .footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 2vh 1vw;
+  }
+  footer .footer__logoContainer {
+    width: 100%;
+  }
+  footer .footer__logoContainer a.logo {
+    font-size: x-large;
+  }
+  footer .footer__email {
+    margin: 0;
+  }
+  footer .footer__email * {
+    margin: 0;
+  }
+  footer .footer__wallpaperlink {
+    width: 40vw;
+    height: 5vh;
+    margin-top: 3vh;
+    font-size: small;
+    padding: 0;
+  }
+  footer .links {
+    padding: 2vh 10px;
+    background: #fff;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    font-size: 12px;
+  }
+  footer .links__layer1, footer .links__layer2 {
+    width: 100%;
+  }
+  footer .links__layer1 {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  footer .links__layer1 p,
+  footer .links__layer1 a {
+    color: #45515F;
+  }
+  footer .links__layer1 p::after,
+  footer .links__layer1 a::after {
+    content: "";
+    margin: 0 3vw;
+    color: #9CA4C7;
+  }
+  footer .links__layer1 p:first-child::after,
+  footer .links__layer1 a:first-child::after {
+    margin: 0 0 0 6vw;
+  }
+  footer .links__layer2 {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding-left: 7vw;
+  }
+  footer .links__layer2 p,
+  footer .links__layer2 a {
+    color: #45515F;
+  }
+  footer .links__layer2 p::after,
+  footer .links__layer2 a::after {
+    content: "";
+    margin: 0 3vw;
+    color: #9CA4C7;
+  }
+  footer .links__layer2 p:not(:last-child):after,
+  footer .links__layer2 a:not(:last-child):after {
+    content: "";
+  }
+  footer .links__layer2 p:first-child::after,
+  footer .links__layer2 a:first-child::after {
+    margin: 0 0 0 6vw;
+  }
+  .popup {
+    width: 90vw;
+  }
+  .popup .name {
+    font-size: large;
   }
 }
 
@@ -764,7 +930,7 @@ footer .links a:first-child::after {
     padding: 10vw;
   }
   .main__content .left__message {
-    font-size: 2em;
+    font-size: xx-large;
     padding: 3vw 0 0 0;
   }
   .main__content .left__subscribe {
@@ -787,13 +953,13 @@ footer .links a:first-child::after {
             align-items: center;
   }
   .main__content .right__player {
-    max-width: 40vw;
+    max-width: 65vw;
   }
   .main__arrowDown {
-    margin: -45vh 0 2vh;
+    margin: -50vh 0 2vh;
   }
   .team {
-    margin: 50vh 0vw 5vw;
+    margin: 35vh 0vw 5vw;
   }
   .team__members div {
     width: 25vw;
@@ -806,6 +972,41 @@ footer .links a:first-child::after {
   }
   footer .links {
     padding: 6vh 7vw 0vh;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  footer .links__layer1 p:after, footer .links__layer1 a:after {
+    margin-left: 3vw;
+  }
+  footer .links__layer2 a:not(:last-child):after {
+    content: "|";
+    margin-left: 3vw;
+  }
+  .popup {
+    width: 70vw;
+  }
+  .popup .description__text {
+    font-size: xx-large;
+  }
+}
+
+@media (max-width: 1000px) {
+  footer p, footer a {
+    font-size: small;
+  }
+}
+
+@media (max-width: 500px) and (min-width: 400px) {
+  .main__content {
+    min-height: 100vh;
+  }
+  .main__arrowDown {
+    margin: -47vh 0 10vh;
   }
 }
 /*# sourceMappingURL=style.css.map */

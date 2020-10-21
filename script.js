@@ -2,7 +2,7 @@ window.addEventListener("scroll", function () {
   const header = document.querySelector("header");
     header.classList.toggle("sticky", window.scrollY > 0);
 });
-function scrollFunction1() {
+function scrollFunction() {
   let e = document.getElementById("team");
   e.scrollIntoView({
     block: "start",
@@ -10,18 +10,8 @@ function scrollFunction1() {
     inline: "start",
   });
 }
-//-------------
-let stateCheck = setInterval(() => {
-  if (document.readyState === "complete") {
-    clearInterval(stateCheck);
-    //
-    var containerHeight = document.getElementById("container").clientHeight;
-    var popupContainer = document.getElementById("popupContainer");
-    popupContainer.style.height = containerHeight + "px";
-  }
-});
+
 function handleClick(memberId) {
-  console.log(memberId)
   var popup;
   var popupContainer = document.getElementById("popupContainer");
   var container = document.getElementById("container");

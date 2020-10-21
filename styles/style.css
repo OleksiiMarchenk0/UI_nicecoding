@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
 /*TABLET*/
-/* -------------generic part -------------------------  */
 * {
   margin: 0;
   padding: 0;
@@ -62,6 +61,7 @@ input[type="submit"] {
   top: 0;
   left: 0;
   width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
 }
 
@@ -127,7 +127,7 @@ header nav ul li:first-child a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background: url("./assets/BG.svg");
+  background: url("../assets/BG.svg");
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -167,10 +167,10 @@ header nav ul li:first-child a {
 }
 
 .main__content .left__subscribe {
-  margin-top: 60px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-top: 60px;
   width: 480px;
   height: 95px;
   -webkit-box-pack: justify;
@@ -241,10 +241,6 @@ header nav ul li:first-child a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  position: fixed;
-  height: 100px;
-  bottom: 5vh;
-  right: 5vw;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -252,6 +248,10 @@ header nav ul li:first-child a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  position: fixed;
+  height: 100px;
+  bottom: 5vh;
+  right: 5vw;
 }
 
 .main__content .right .socialButtons button {
@@ -320,13 +320,12 @@ header nav ul li:first-child a {
 }
 
 .team__members {
-  padding: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  max-width: 100vw;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  padding: 20px;
 }
 
 .team__members div {
@@ -598,7 +597,6 @@ footer .footer__wallpaperlink:hover {
 }
 
 footer .links {
-  padding: 40px 250px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -609,6 +607,7 @@ footer .links {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  padding: 40px 250px;
 }
 
 footer .links__layer1, footer .links__layer2 {
@@ -619,9 +618,9 @@ footer .links__layer1, footer .links__layer2 {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  width: 30vw;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  width: 30vw;
 }
 
 footer .links__layer1 p,
@@ -677,7 +676,7 @@ footer .links__layer2 a:not(:last-child):after {
   padding: 20px;
 }
 
-.popup__closeBtn {
+.popup__closeButtonContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -762,109 +761,6 @@ footer .links__layer2 a:not(:last-child):after {
   }
 }
 
-@media (max-width: 1025px) and (min-width: 551px) {
-  header,
-  header.sticky {
-    padding: 5px 2vw;
-  }
-  .main__content {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    padding: 0;
-    min-height: 101vh;
-  }
-  .main__content .left {
-    padding: 10vw;
-  }
-  .main__content .left__message {
-    font-size: xx-large;
-    padding: 3vw 0 0 0;
-  }
-  .main__content .left__subscribe {
-    margin-top: 100px;
-  }
-  .main__content .left__subscribe p {
-    font-size: 1.5em;
-  }
-  .main__content .left__subscribtionElement {
-    width: 70vw;
-  }
-  .main__content .left__subscribtionElement input {
-    width: 60vw;
-  }
-  .main__content .right {
-    padding: 300px 0 0 0;
-    width: 100vw;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .main__content .right__player {
-    max-width: 65vw;
-  }
-  .main__arrowDown {
-    margin: -50vh 0 2vh;
-  }
-  .team {
-    margin: 45vh 0vw 5vw;
-  }
-  .team__members {
-    max-width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    width: unset;
-    overflow-x: scroll;
-    margin: 0;
-    -webkit-box-pack: unset;
-        -ms-flex-pack: unset;
-            justify-content: unset;
-  }
-  .team__members div {
-    min-width: 40vw;
-  }
-  footer {
-    padding: 0;
-  }
-  footer .footer {
-    padding: 0 2vw;
-  }
-  footer .links {
-    padding: 6vh 7vw 0vh;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-  footer .links__layer1 p:after,
-  footer .links__layer1 a:after {
-    margin-left: 3vw;
-  }
-  footer .links__layer2 a:not(:last-child):after {
-    content: "|";
-    margin-left: 3vw;
-  }
-  .popup {
-    width: 70vw;
-  }
-  .popup .description__text {
-    font-size: xx-large;
-  }
-}
-
-@media (max-width: 1000px) {
-  footer p,
-  footer a {
-    font-size: small;
-  }
-}
-
-/*ok*/
 @media (max-width: 319px) {
   header a.logo, header.sticky a.logo {
     font-size: medium;
@@ -1118,6 +1014,108 @@ footer .links__layer2 a:not(:last-child):after {
   }
   .popup .name {
     font-size: large;
+  }
+}
+
+@media (max-width: 1000px) {
+  footer p,
+  footer a {
+    font-size: small;
+  }
+}
+
+@media (max-width: 1025px) and (min-width: 551px) {
+  header,
+  header.sticky {
+    padding: 5px 2vw;
+  }
+  .main__content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 0;
+    min-height: 101vh;
+  }
+  .main__content .left {
+    padding: 10vw;
+  }
+  .main__content .left__message {
+    font-size: 40px;
+    padding: 3vw 0 0 0;
+  }
+  .main__content .left__subscribe {
+    margin-top: 100px;
+  }
+  .main__content .left__subscribe p {
+    font-size: 1.5em;
+  }
+  .main__content .left__subscribtionElement {
+    width: 70vw;
+  }
+  .main__content .left__subscribtionElement input {
+    width: 60vw;
+  }
+  .main__content .right {
+    padding: 300px 0 0 0;
+    width: 100vw;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .main__content .right__player {
+    max-width: 65vw;
+  }
+  .main__arrowDown {
+    margin: -50vh 0 2vh;
+  }
+  .team {
+    margin: 45vh 0vw 5vw;
+  }
+  .team__members {
+    max-width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: unset;
+    overflow-x: scroll;
+    margin: 0;
+    -webkit-box-pack: unset;
+        -ms-flex-pack: unset;
+            justify-content: unset;
+  }
+  .team__members div {
+    min-width: 40vw;
+  }
+  footer {
+    padding: 0;
+  }
+  footer .footer {
+    padding: 0 2vw;
+  }
+  footer .links {
+    padding: 6vh 7vw 0vh;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  footer .links__layer1 p:after,
+  footer .links__layer1 a:after {
+    margin-left: 3vw;
+  }
+  footer .links__layer2 a:not(:last-child):after {
+    content: "|";
+    margin-left: 3vw;
+  }
+  .popup {
+    width: 70vw;
+  }
+  .popup .description__text {
+    font-size: xx-large;
   }
 }
 /*# sourceMappingURL=style.css.map */

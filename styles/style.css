@@ -283,7 +283,7 @@ header nav ul li:first-child a {
   height: 150px;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  background: url("./assets/play.svg");
+  background: url("../assets/play.svg");
 }
 
 .main__arrowDown {

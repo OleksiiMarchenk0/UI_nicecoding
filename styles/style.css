@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
 /*TABLET*/
-/* -------------generic part -------------------------  */
 * {
   margin: 0;
   padding: 0;
@@ -25,7 +24,7 @@ a {
   line-height: 24px;
 }
 
-a:before, a:after {
+a:before {
   content: "";
   position: absolute;
   -webkit-transition: -webkit-transform 0.3s ease;
@@ -62,10 +61,10 @@ input[type="submit"] {
   top: 0;
   left: 0;
   width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-/*specific part*/
 header {
   position: fixed;
   width: 100%;
@@ -128,7 +127,7 @@ header nav ul li:first-child a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background: url("./assets/BG.svg");
+  background: url("../assets/BG.svg");
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -165,14 +164,13 @@ header nav ul li:first-child a {
   font-weight: 700;
   line-height: 56px;
   letter-spacing: 0.2px;
-  text-align: left;
 }
 
 .main__content .left__subscribe {
-  margin-top: 60px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-top: 60px;
   width: 480px;
   height: 95px;
   -webkit-box-pack: justify;
@@ -182,7 +180,6 @@ header nav ul li:first-child a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  color: #fff;
 }
 
 .main__content .left__subscribe p {
@@ -237,17 +234,13 @@ header nav ul li:first-child a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 0 0 300px 0;
+  padding: 0 0 30vh 0;
 }
 
 .main__content .right .socialButtons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  position: fixed;
-  height: 100px;
-  bottom: 5vh;
-  right: 5vw;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -255,6 +248,10 @@ header nav ul li:first-child a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  position: fixed;
+  height: 100px;
+  bottom: 5vh;
+  right: 5vw;
 }
 
 .main__content .right .socialButtons button {
@@ -275,6 +272,7 @@ header nav ul li:first-child a {
 
 .main__content .right__player img {
   width: 100%;
+  border-radius: 10px;
 }
 
 .main__content .right__player--click {
@@ -285,7 +283,7 @@ header nav ul li:first-child a {
   height: 150px;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  background: url("./assets/play.svg");
+  background: url("../assets/play.svg");
 }
 
 .main__arrowDown {
@@ -300,7 +298,7 @@ header nav ul li:first-child a {
 
 .main__arrowDown a {
   background: transparent;
-  border: 1px solid rgba(231, 231, 231, 0.3);
+  border: 2px solid rgba(231, 231, 231, 0.3);
   border-radius: 50%;
   padding: 15px;
 }
@@ -318,16 +316,16 @@ header nav ul li:first-child a {
           flex-direction: column;
   position: relative;
   padding: 88px 0;
+  overflow-x: scroll;
 }
 
 .team__members {
-  margin: 0 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100vw;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  padding: 20px;
 }
 
 .team__members div {
@@ -341,7 +339,7 @@ header nav ul li:first-child a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 270px;
+  min-width: 25%;
 }
 
 .team__members div img {
@@ -378,6 +376,7 @@ header nav ul li:first-child a {
 
 .team__members div p.description {
   color: #45515F;
+  padding: 15px;
   font-size: 18px;
   line-height: 24px;
 }
@@ -432,7 +431,7 @@ header nav ul li:first-child a {
 
 .contact__description {
   font-size: 18px;
-  width: 25%;
+  width: 40vw;
   text-align: center;
 }
 
@@ -535,12 +534,20 @@ footer .links {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 10vh 20vw;
 }
 
-footer .footer p,
-footer .footer a:not(.logo),
-footer .links p,
-footer .links a:not(.logo) {
+footer .footer__layer1 footer .footer__layer2 p,
+footer .footer__layer1 footer .footer__layer2 a:not(.logo),
+footer .links__layer1 footer .footer__layer2 p,
+footer .links__layer1 footer .footer__layer2 a:not(.logo), footer .footer__layer1
+footer .links__layer2 p,
+footer .footer__layer1
+footer .links__layer2 a:not(.logo),
+footer .links__layer1
+footer .links__layer2 p,
+footer .links__layer1
+footer .links__layer2 a:not(.logo) {
   font-size: 18px;
 }
 
@@ -590,40 +597,72 @@ footer .footer__wallpaperlink:hover {
 }
 
 footer .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 40px 250px;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
 }
 
-footer .links p,
-footer .links a {
+footer .links__layer1, footer .links__layer2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 30vw;
+}
+
+footer .links__layer1 p,
+footer .links__layer1 a {
   color: #45515F;
 }
 
-footer .links p:not(:last-child)::after,
-footer .links a:not(:last-child)::after {
-  content: "|";
-  margin: 0 3vw;
-  color: #9CA4C7;
+footer .links__layer1 p {
+  margin: 3px 0 0 0;
 }
 
-footer .links p:first-child::after,
-footer .links a:first-child::after {
-  margin: 0 0 0 6vw;
+footer .links__layer1 p:after {
+  content: "|";
+  margin-left: 5vw;
+}
+
+footer .links__layer1 a:after {
+  content: "|";
+  margin-left: 7vw;
+}
+
+footer .links__layer2 a {
+  color: #45515F;
+}
+
+footer .links__layer2 a:not(:last-child):after {
+  content: "|";
+  margin-left: 5vw;
 }
 
 /* popup for teams members*/
 .popup {
   display: none;
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   background: white;
   border-radius: 20px;
-  width: 26vw;
-  height: 71vh;
+  width: 40vw;
+  height: 90vh;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -637,7 +676,7 @@ footer .links a:first-child::after {
   padding: 20px;
 }
 
-.popup__closeBtn {
+.popup__closeButtonContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -647,7 +686,7 @@ footer .links a:first-child::after {
           justify-content: flex-end;
 }
 
-.popup__close {
+.popup [id*="btn-"] {
   border-radius: 50%;
   width: 25px;
   height: 27px;
@@ -666,6 +705,7 @@ footer .links a:first-child::after {
 
 .popup .description__text {
   color: #45515F;
+  font-size: 17px;
 }
 
 .popup .name {
@@ -701,10 +741,100 @@ footer .links a:first-child::after {
   }
 }
 
-@media (max-width: 550px) and (min-width: 320px) {
+@media (max-width: 420px) and (min-width: 321px) {
+  .main__content {
+    min-height: 110vh;
+  }
+  .main__arrowDown {
+    margin: -50vh 0 10vh;
+  }
+  .team {
+    margin: 35vh 0 5vh;
+  }
+  .contact form {
+    height: 40vh;
+  }
+  .contact form input[type="text"],
+  .contact form input[type="email"],
+  .contact form input[type="submit"] {
+    height: 5vh;
+  }
+}
+
+@media (max-width: 319px) {
+  header a.logo, header.sticky a.logo {
+    font-size: medium;
+  }
+  header nav ul li a, header.sticky nav ul li a {
+    font-size: small;
+  }
+  .main__content {
+    min-height: 95vh;
+  }
+  .main__content .left__message {
+    font-size: large;
+  }
+  .main__content .left__subscribtionElement {
+    width: unset;
+  }
+  .main__content .left__subscribtionElement input {
+    width: 90vw;
+  }
+  .main__content .left__subscribe {
+    margin-top: 2vh;
+  }
+  .main__content .left__subscribe p {
+    font-size: small;
+  }
+  .main__content .right {
+    padding: 0;
+  }
+  .main__arrowDown {
+    margin: -43vh 0 2vh;
+  }
+  .main__arrowDown a {
+    padding: 10px;
+  }
+  .main__arrowDown a i::before {
+    font-size: 15px;
+  }
+  .team {
+    margin: 35vh 0vw 5vw;
+  }
+  footer .footer {
+    padding: 2vh 2vw;
+  }
+  footer .footer__logoContainer a.logo {
+    font-size: medium;
+  }
+  footer .links {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .popup .description__text {
+    font-size: medium;
+  }
+}
+
+@media (max-width: 500px) and (min-width: 400px) {
+  .main__content {
+    min-height: 100vh;
+  }
+  .main__arrowDown {
+    margin: -47vh 0 10vh;
+  }
+}
+
+@media (max-width: 550px) and (min-width: 280px) {
   header,
   header.sticky {
     padding: 5px 1vw;
+  }
+  header a.logo,
+  header.sticky a.logo {
+    font-size: x-large;
   }
   .main__content {
     -webkit-box-orient: vertical;
@@ -712,14 +842,15 @@ footer .links a:first-child::after {
         -ms-flex-direction: column;
             flex-direction: column;
     padding: 0;
-    min-height: 101vh;
+    min-height: 130vh;
   }
   .main__content .left {
     padding: 10vw;
   }
   .main__content .left__message {
-    font-size: 2em;
+    font-size: 24px;
     padding: 3vw 0 0 0;
+    line-height: 32px;
   }
   .main__content .left__subscribe {
     margin-top: 5vh;
@@ -738,12 +869,158 @@ footer .links a:first-child::after {
         -ms-flex-align: center;
             align-items: center;
   }
-  .main__content .left__subscribtionElement input, .main__content .left__subscribtionElement button {
+  .main__content .left__subscribtionElement input,
+  .main__content .left__subscribtionElement button {
     width: 90vw;
     margin: 5px 0;
+    font-size: small;
   }
   .main__content .left__subscribtionElement button {
     position: unset;
+  }
+  .main__content .right {
+    padding: 0;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .main__content .right__player {
+    width: 60vw;
+  }
+  .main__arrowDown {
+    margin: -60vh 0 10vh;
+  }
+  .team {
+    padding: 0;
+    margin: 55vh 0vw 5vw;
+  }
+  .team__members {
+    -webkit-box-pack: unset;
+        -ms-flex-pack: unset;
+            justify-content: unset;
+  }
+  .team__members div {
+    min-width: 100%;
+    padding: 0 20px;
+  }
+  .contact {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .contact__description {
+    width: 90vw;
+    font-size: small;
+  }
+  .contact form {
+    width: 80vw;
+    height: 50vh;
+  }
+  .contact form input[type="text"],
+  .contact form input[type="submit"],
+  .contact form input[type="email"] {
+    height: 7vh;
+    font-size: small;
+  }
+  footer {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  footer .footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 2vh 1vw;
+  }
+  footer .footer__logoContainer {
+    width: 100%;
+  }
+  footer .footer__logoContainer a.logo {
+    font-size: x-large;
+  }
+  footer .footer__email {
+    margin: 0;
+  }
+  footer .footer__email * {
+    margin: 0;
+  }
+  footer .footer__wallpaperlink {
+    width: 40vw;
+    height: 5vh;
+    margin-top: 3vh;
+    font-size: small;
+    padding: 0;
+  }
+  footer .links {
+    padding: 2vh 10px;
+    background: #fff;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    font-size: 12px;
+  }
+  footer .links__layer1, footer .links__layer2 {
+    width: 100%;
+  }
+  footer .links__layer1 {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  footer .links__layer1 p,
+  footer .links__layer1 a {
+    color: #45515F;
+  }
+  footer .links__layer1 p::after,
+  footer .links__layer1 a::after {
+    content: "";
+    margin: 0 3vw;
+    color: #9CA4C7;
+  }
+  footer .links__layer1 p:first-child::after,
+  footer .links__layer1 a:first-child::after {
+    margin: 0 0 0 6vw;
+  }
+  footer .links__layer2 {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding-left: 7vw;
+  }
+  footer .links__layer2 p,
+  footer .links__layer2 a {
+    color: #45515F;
+  }
+  footer .links__layer2 p::after,
+  footer .links__layer2 a::after {
+    content: "";
+    margin: 0 3vw;
+    color: #9CA4C7;
+  }
+  footer .links__layer2 p:not(:last-child):after,
+  footer .links__layer2 a:not(:last-child):after {
+    content: "";
+  }
+  footer .links__layer2 p:first-child::after,
+  footer .links__layer2 a:first-child::after {
+    margin: 0 0 0 6vw;
+  }
+  .popup {
+    width: 90vw;
+  }
+  .popup .name {
+    font-size: large;
+  }
+}
+
+@media (max-width: 1000px) {
+  footer p,
+  footer a {
+    font-size: small;
   }
 }
 
@@ -764,7 +1041,7 @@ footer .links a:first-child::after {
     padding: 10vw;
   }
   .main__content .left__message {
-    font-size: 2em;
+    font-size: 40px;
     padding: 3vw 0 0 0;
   }
   .main__content .left__subscribe {
@@ -787,16 +1064,28 @@ footer .links a:first-child::after {
             align-items: center;
   }
   .main__content .right__player {
-    max-width: 40vw;
+    max-width: 65vw;
   }
   .main__arrowDown {
-    margin: -45vh 0 2vh;
+    margin: -50vh 0 2vh;
   }
   .team {
-    margin: 50vh 0vw 5vw;
+    margin: 45vh 0vw 5vw;
+  }
+  .team__members {
+    max-width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: unset;
+    overflow-x: scroll;
+    margin: 0;
+    -webkit-box-pack: unset;
+        -ms-flex-pack: unset;
+            justify-content: unset;
   }
   .team__members div {
-    width: 25vw;
+    min-width: 40vw;
   }
   footer {
     padding: 0;
@@ -806,6 +1095,27 @@ footer .links a:first-child::after {
   }
   footer .links {
     padding: 6vh 7vw 0vh;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  footer .links__layer1 p:after,
+  footer .links__layer1 a:after {
+    margin-left: 3vw;
+  }
+  footer .links__layer2 a:not(:last-child):after {
+    content: "|";
+    margin-left: 3vw;
+  }
+  .popup {
+    width: 70vw;
+  }
+  .popup .description__text {
+    font-size: xx-large;
   }
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,13 +1,6 @@
 window.addEventListener("scroll", function () {
   const header = document.querySelector("header");
-  // var popupContainer = document.getElementById('popupContainer'),
-  //   style = window.getComputedStyle(popupContainer),
-  //   display = style.getPropertyValue('display');
-  // if(display==="none")
-//  {
-    header.classList.toggle("sticky", window.scrollY > 0);
-  //}
-  
+    header.classList.toggle("sticky", window.scrollY > 0); 
 });
 
 function scrollFunction1() {
@@ -19,7 +12,6 @@ function scrollFunction1() {
   });
 }
 
-//-------------
 let stateCheck = setInterval(() => {
   if (document.readyState === "complete") {
     clearInterval(stateCheck);

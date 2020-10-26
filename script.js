@@ -1,7 +1,7 @@
 window.addEventListener("scroll", function () {
-  const header = document.querySelector("header");
-    header.classList.toggle("sticky", window.scrollY > 0); 
-
+  const headerContainer = document.querySelector(".headerContainer");
+  headerContainer.classList.toggle("sticky", window.scrollY > 0); 
+});
 function scrollFunction() {
   let e = document.getElementById("team");
   e.scrollIntoView({
@@ -10,11 +10,10 @@ function scrollFunction() {
     inline: "start",
   });
 }
-
 function handleClick(memberId) {
   var popup;
   var popupContainer = document.getElementById("popupContainer");
-  var container = document.getElementById("container");
+  var content = document.getElementById("content");
   if (memberId === "member-1") {
     popup = document.getElementById("popup-1");
   } else if (memberId === "member-2") {
@@ -26,7 +25,7 @@ function handleClick(memberId) {
   }
   popupContainer.style.display = "flex";
   popup.style.cssText += 'display: flex;';
-  container.style.position = "fixed";
+  content.style.position = "fixed";
 }
 function closePopup(btnId){
   var popupContainer = document.getElementById("popupContainer");

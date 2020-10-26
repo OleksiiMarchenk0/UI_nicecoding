@@ -10,160 +10,171 @@
     <script src="./script.js"></script>
     <title>Nice Coding</title>
 </head>
-<body>
-    <div class="container" id="container">
-        <header>
-            <a href="#" class="logo">logo</a>
-            <nav>
-                <ul>
-                    <li><a href="#" class="active">Ico</a></li>
-                    <li><a href="#">Team</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
 
+<body>
+    <div class="content" id="content">
+        <header>
+            <div class=" headerContainer">
+                <a href="#" class="logo">logo</a>
+                <nav>
+                    <ul>
+                        <li><a href="#" class="active">Ico</a></li>
+                        <li><a href="#">Team</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
         </header>
-        <section class="main">
-            <div class="main__content">
-                <div class="left">
-                    <div class="left__message">
-                        The first fully-automatic social crypto trading platform with real crypto currency
+       <section class="main">
+            <div class="container mainContainer">
+                <div class="main__content">
+                    <div class="left">
+                        <div class="left__message">
+                            The first fully-automatic social crypto trading platform with real crypto currency
+                        </div>
+                        <div class="left__subscribe">
+                            <p>Subscribe and get the lastes information</p>
+                            <div class="left__subscribtionElement">
+                                <input type="text" placeholder="Enter your email">
+                                <button class="left__subscribe--submit">Subscribe</button>
+                            </div>
+                        </div>            
                     </div>
-                    <div class="left__subscribe">
-                        <p>Subscribe and get the lastes information</p>
-                        <div class="left__subscribtionElement">
-                            <input type="text" placeholder="Enter your email">
-                            <button class="left__subscribe--submit">Subscribe</button>
+                    <div class="right">
+                        <div class="right__player">
+                            <img src="./assets/video.png" alt="video">
+                            <button class="right__player--click"></button>
+                        </div>
+                        <div class="socialButtons">
+                            <button>
+                                <i class="flaticon-twitter"></i>
+                            </button>
+                            <button>
+                                <i class="flaticon-facebook-app-symbol"></i>
+                            </button>
                         </div>
                     </div>
+
                 </div>
-                <div class="right">
-                    <div class="right__player">
-                        <img src="./assets/video.png" alt="video">
-                        <button class="right__player--click"></button>
-                    </div>
-                    <div class="socialButtons">
-                        <button>
-                            <i class="flaticon-twitter"></i>
-                        </button>
-                        <button>
-                            <i class="flaticon-facebook-app-symbol"></i>
-                        </button>
-                    </div>
+                <div class="scrollDown">
+                    <a onclick="scrollFunction()">
+                        <i class="flaticon-down-arrow"></i>
+                    </a>
                 </div>
-            </div>
-            <div class="main__arrowDown">
-                <a onclick="scrollFunction()">
-                    <i class="flaticon-down-arrow"></i>
-                </a>
+               
             </div>
         </section>
-        <section class="team" id="team">
-            <p class="team__header">Team</p>
-            <div class="team__members">
-                <div>
-                    <img src="./assets/members/Edgar.png" alt="member1">
-                    <p id="member-1" onClick="handleClick(this.id)" class="name">Edgar Morrison</p>
-                    <p class="position">CEO</p>
-                    <p class="description"> Having used discount toner cartridges for twenty years, there have been a
-                        lot of changes in the toner... </p>
-                    <div class="social">
-                        <button>
-                            <i class="flaticon-facebook-app-symbol-black"></i>
-                        </button>
-                        <button>
-                            <i class="flaticon-linkedin"></i>
-                        </button>
+        <!-- <section class="team" id="team">
+            <div class="container">
+                <p class="team__header">Team</p>
+                <div class="team__members">
+                    <div>
+                        <img src="./assets/members/Edgar.png" alt="member1">
+                        <p id="member-1" onClick="handleClick(this.id)" class="name">Edgar Morrison</p>
+                        <p class="position">CEO</p>
+                        <p class="description"> Having used discount toner cartridges for twenty years, there have been a
+                            lot of changes in the toner... </p>
+                        <div class="social">
+                            <button>
+                                <i class="flaticon-facebook-app-symbol-black"></i>
+                            </button>
+                            <button>
+                                <i class="flaticon-linkedin"></i>
+                            </button>
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <img src="./assets//members/Mae.png" alt="member2">
-                    <p id="member-2" onClick="handleClick(this.id)" class="name">Mae Martin</p>
-                    <p class="position">CTO</p>
-                    <p class="description"> Having used discount toner cartridges for twenty years, there have been a
-                        lot of changes in the toner... </p>
-                    <div class="social">
-                        <button>
-                            <i class="flaticon-facebook-app-symbol-black"></i>
-                        </button>
-                        <button>
-                            <i class="flaticon-linkedin"></i>
-                        </button>
+                    <div>
+                        <img src="./assets//members/Mae.png" alt="member2">
+                        <p id="member-2" onClick="handleClick(this.id)" class="name">Mae Martin</p>
+                        <p class="position">CTO</p>
+                        <p class="description"> Having used discount toner cartridges for twenty years, there have been a
+                            lot of changes in the toner... </p>
+                        <div class="social">
+                            <button>
+                                <i class="flaticon-facebook-app-symbol-black"></i>
+                            </button>
+                            <button>
+                                <i class="flaticon-linkedin"></i>
+                            </button>
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <img src="./assets//members//David.png" alt="member3">
-                    <p id="member-3" onClick="handleClick(this.id)" class="name">David Banks</p>
-                    <p class="position">CFO</p>
-                    <p class="description"> Having used discount toner cartridges for twenty years, there have been a
-                        lot of changes in the toner... </p>
-                    <div class="social">
-                        <button>
-                            <i class="flaticon-facebook-app-symbol-black"></i>
-                        </button>
-                        <button>
-                            <i class="flaticon-linkedin"></i>
-                        </button>
+                    <div>
+                        <img src="./assets//members//David.png" alt="member3">
+                        <p id="member-3" onClick="handleClick(this.id)" class="name">David Banks</p>
+                        <p class="position">CFO</p>
+                        <p class="description"> Having used discount toner cartridges for twenty years, there have been a
+                            lot of changes in the toner... </p>
+                        <div class="social">
+                            <button>
+                                <i class="flaticon-facebook-app-symbol-black"></i>
+                            </button>
+                            <button>
+                                <i class="flaticon-linkedin"></i>
+                            </button>
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <img src="./assets//members//Frederick.png" alt="member4">
-                    <p id="member-4" onClick="handleClick(this.id)" class="name">Frederick Parsons</p>
-                    <p class="position">COO</p>
-                    <p class="description"> Having used discount toner cartridges for twenty years, there have been a
-                        lot of changes in the toner... </p>
-                    <div class="social">
-                        <button>
-                            <i class="flaticon-facebook-app-symbol-black"></i>
-                        </button>
-                        <button>
-                            <i class="flaticon-linkedin"></i>
-                        </button>
+                    <div>
+                        <img src="./assets//members//Frederick.png" alt="member4">
+                        <p id="member-4" onClick="handleClick(this.id)" class="name">Frederick Parsons</p>
+                        <p class="position">COO</p>
+                        <p class="description"> Having used discount toner cartridges for twenty years, there have been a
+                            lot of changes in the toner... </p>
+                        <div class="social">
+                            <button>
+                                <i class="flaticon-facebook-app-symbol-black"></i>
+                            </button>
+                            <button>
+                                <i class="flaticon-linkedin"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
         <section class="contact">
-            <p class="contact__header">Contact Us</p>
-            <p class="contact__description">
-                Most calendars are designed for teams.
-                Slate is designed for freelancers
-            </p>
-            <form action="">
-                <input type="text" placeholder="Your Name">
-                <input type="email" placeholder="Your Email">
-                <div class="checkbox">
-                    <input type="checkbox" name="checkbox">
-                    <label for="checkbox">Checkbox</label>
-                </div>
-                <input type="submit" value="Send">
-            </form>
+            <div class="container">
+                <p class="contact__header">Contact Us</p>
+                <p class="contact__description">
+                    Most calendars are designed for teams.
+                    Slate is designed for freelancers
+                </p>
+                <form>
+                    <input type="text" placeholder="Your Name">
+                    <input type="email" placeholder="Your Email">
+                    <div class="checkbox">
+                        <input type="checkbox" name="checkbox">
+                        <label for="checkbox">Checkbox</label>
+                    </div>
+                    <input type="submit" value="Send">
+                </form>
+            </div>
         </section>
         <footer>
-            <div class="footer">
-                <div class="footer__logoContainer">
-                    <a href="#" class="logo">logo</a>
+            <div class="container">
+                <div class="footer">
+                    <div class="footer__logoContainer">
+                        <a href="#" class="logo">logo</a>
+                    </div>
+                    <div class="footer__email">
+                        <p>Contact us</p>
+                        <a href="mailto:have@nicecoding.io">have@nicecoding.io</a>
+                    </div>
+                    <button class="footer__wallpaperlink">
+                        Read wallpaper
+                    </button>
                 </div>
-
-                <div class="footer__email">
-                    <p>Contact us</p>
-                    <a href="mailto:have@nicecoding.io">have@nicecoding.io</a>
+                <div class="links">
+                    <div class="links__layer1">
+                        <p>&copy; Copywriters 2020</p>
+                        <a href="#">FAQ</a>
+                    </div>
+                    <div class="links__layer2">
+                        <a href="#">Terms of Use</a>
+                        <a href="#">Privacy Policy</a>
+                    </div>
                 </div>
-                <button class="footer__wallpaperlink">
-                    Read wallpaper
-                </button>
             </div>
-            <div class="links">
-                <div class="links__layer1">
-                    <p>&copy; Copywriters 2020</p>
-                    <a href="#">FAQ</a>
-                </div>
-                <div class="links__layer2">
-                    <a href="#">Terms of Use</a>
-                    <a href="#">Privacy Policy</a>
-                </div>
-            </div>
-        </footer>
+        </footer> -->
     </div>
     <div id="popupContainer">
         <section class="popup" id="popup-1">
@@ -276,5 +287,4 @@
         </section>
     </div>
 </body>
-
 </html>

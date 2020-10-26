@@ -1,11 +1,13 @@
 @import "./variables";
 @import "./mixins";
-
+body{
+  //background: chartreuse;
+}
 * {
   margin: 0;
   padding: 0;
   color: $mainColor;
-  font-size: 16px;
+  font-size: 1.1vw; //  ~ 16px
   font-family: "Sen-Regular";
   box-sizing: border-box;
   border: none;
@@ -19,7 +21,7 @@ a {
   position: relative;
   color: inherit;
   text-decoration: none;
-  line-height: 24px;
+  line-height:2.92vh; // ~ 24px;
   &:before {
     content: "";
     position: absolute;
@@ -34,16 +36,14 @@ input[type="submit"] {
 [class*="header"] {
   line-height: $standardLineHeight;
   letter-spacing: $letterSpacing;
-  text-transform: uppercase;
 }
-
+.container{
+  max-width:97vw;
+}
 .logo {
   font-family: "Montserrat", sans-serif;
   letter-spacing: 1px;
   font-size: 2em;
-}
-.container {
-  position: relative;
 }
 #popupContainer {
   display: none;
@@ -54,391 +54,177 @@ input[type="submit"] {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
 }
-
-header {
-  position: fixed;
-  width: 100%;
-  height: 70px;
+header,
+.main{
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 40px 100px;
-  z-index: 10000;
-  transition: $transition;
-  &.sticky {
-    padding: 5px 100px;
-    background: #fff;
-  }
-  nav {
-    ul {
-      display: flex;
-      li {
-        list-style-type: none;
-        a {
-          position: relative;
-          margin: 0 15px;
-          letter-spacing: 2px;
-          &.active {
-            border-bottom: 2px solid #5454d4;
-          }
-        }
-        &:first-child {
+  justify-content: center;
+}
+header{
+  .headerContainer {
+    position: fixed;
+    width: 100%;
+    height: 10vh;
+    padding: 0 1.5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+    transition: $transition;
+    &.sticky {
+      //padding: 5px 100px;
+      background: #fff;
+    }
+    nav {
+      ul {
+        display: flex;
+        li {
+          list-style-type: none;
           a {
-            text-transform: uppercase;
+            position: relative;
+            margin: 0 1vw;
+            letter-spacing: 0.139vw;
+            &.active {
+              border-bottom: 2px solid #5454d4;
+            }
+          }
+          &:first-child {
+            a {
+              text-transform: uppercase;
+            }
           }
         }
       }
     }
   }
 }
-.main {
-  display: flex;
-  flex-direction: column;
-  &__content {
-    display: flex;
-    background: url("../assets/BG.svg");
-    justify-content: space-between;
-    background-size: cover;
-    margin-top: 70px;
-    padding: 0 4vw 0 8vw;
-    top: 50px;
+
+.main{
+  margin-top: 10vh;
+  background: url("../assets/BG.svg");
     background-position: 50% 20%;
-    min-height: 110vh;
-    .left {
+    background-size: cover;
+    height: 110vh;
+    position: relative;
+  &Container{
+    display: flex;
+    height: inherit;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+  }
+  &__content{
+    display: flex;
+    height: 70vh;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: -10vh;
+  }
+  .left{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content:center;
+    
+    &__message {
+      color: #fff;
+      max-width: 40vw;
+      font-size: 2.7vw; // ~40px
+      font-style: normal;
+      font-weight: 700;
+      line-height: 6.82vh;
+      letter-spacing: 0.02vw;
+    }
+    &__subscribe {
+      display: flex;
+      margin-top: 8vh;
+      width: 30vw;
+      height: 11vh;
+      justify-content: space-between;
+      flex-direction: column;
+      p {
+        color: #fff;
+        opacity: 0.7;
+        font-size: 2.2vh;
+      }
+    }
+    &__subscribtionElement {
+      display: flex;
+      flex-direction: row;
+      position: relative;
+      height: 5vh;
+    }
+    input {
+      width: 30vw;
+      height: 5vh;
+      border-radius: $borderRadius;
+      padding: 3vh 3vw;
+    }
+    button {
+      height: 6vh;
+      width: 10vw;
+      position: absolute;
+      right: 0;
+      border-radius: $borderRadius;
+      background: $aquaColor;
+      color: #fff;
+      transition: $transition;
+      &:hover {
+        background: $aquaColorHover;
+      }
+    }
+  }
+  .right{
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    padding: 0 0 30vh 0;
+    &__player {
+      position: relative;
+      img {
+        width: 37.7vw;
+        border-radius: 1.21vh 0.69vw;
+      }
+      &--click {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 10.4vw;
+        height: 18.27vh;
+        transform: translate(-50%, -50%);
+        background: url("../assets/play.svg") center no-repeat;
+        
+      }
+    }
+    .socialButtons {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
-      justify-content: center;
-      padding: 0 0 100px 0;
-      &__message {
-        color: #fff;
-        max-width: 569px;
-        font-size: 40px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 56px;
-        letter-spacing: 0.2px;
-      }
-      &__subscribe {
-        display: flex;
-        margin-top: 60px;
-        width: 480px;
-        height: 95px;
-        justify-content: space-between;
-        flex-direction: column;
-        p {
-          color: #fff;
-          opacity: 0.7;
-          font-size: 18px;
-        }
-      }
-      &__subscribtionElement {
-        display: flex;
-        flex-direction: row;
-        position: relative;
-      }
-      input {
-        width: 480px;
-        height: 46px;
-        border-radius: $borderRadius;
-        padding: 20px;
-      }
+      justify-content: space-between;
+      position: fixed;
+      height: 12.18vh;
+      bottom: 5vh;
+      right: 5vw;
+     
       button {
-        height: 46px;
-        width: 154px;
-        position: absolute;
-        right: 0;
-        border-radius: $borderRadius;
-        background: $aquaColor;
-        color: #fff;
+        border-radius: 50%;
+        padding: 1.21vh 0.69vw;
+        background: $socialIconColor;
         transition: $transition;
         &:hover {
           background: $aquaColorHover;
         }
       }
     }
-    .right {
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      justify-content: center;
-      padding: 0 0 30vh 0;
-      .socialButtons {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        position: fixed;
-        height: 100px;
-        bottom: 5vh;
-        right: 5vw;
-       
-        button {
-          border-radius: 50%;
-          padding: 10px;
-          background: $socialIconColor;
-          transition: $transition;
-          &:hover {
-            background: $aquaColorHover;
-          }
-        }
-      }
-      &__player {
-        position: relative;
-        img {
-          width: 100%;
-          border-radius: 10px;
-        }
-        &--click {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          width: 150px;
-          height: 150px;
-          transform: translate(-50%, -50%);
-          background: url("../assets/play.svg");
-        }
-      }
-    }
-  }
-  &__arrowDown {
-    display: flex;
-    justify-content: center;
-    margin: -27vh 0 10vh;
-    a {
-      background: transparent;
-      border: 2px solid rgba(231, 231, 231, 0.3);
-      border-radius: 50%;
-      padding: 15px;
-    }
   }
 }
-.team {
+.scrollDown{
   display: flex;
-  align-items: center;
-  flex-direction: column;
-  position: relative;
-  padding: 88px 0;
-  overflow-x: scroll;
-  &__members {
-    display: flex;
-    justify-content: space-around;
-    padding: 20px;
-    div {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-width: 25%;
-      img {
-        width: 100%;
-        border-radius: 50%;
-        width: fit-content;
-      }
-      p {
-        margin: 7px 0;
-        text-align: center;
-        &.name {
-          color: $aquaColor;
-          font-size: 24px;
-          transition: $transition;
-          &:hover {
-            color: $aquaColorHover;
-            cursor: pointer;
-          }
-        }
-        &.position {
-          opacity: 0.5;
-          color: $lightGray;
-          font-size: 13px;
-          font-family: "Open-sans", sans-serif;
-        }
-        &.description {
-          color: $darkGrayishCyan;
-          padding: 15px;
-          font-size: 18px;
-          line-height: 24px;
-        }
-      }
-      .social {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        margin-top: 15px;
-        button {
-          width: 43px;
-          height: 23px;
-          border: 1px solid rgb(127, 139, 152);
-          margin: 0 15px;
-          background: transparent;
-          border-radius: 3px;
-          transition: $transition;
-          &:hover {
-            border: 1px solid $darkGrayishCyan;
-          }
-        }
-      }
-    }
-  }
-}
-.contact {
-  padding: 10vh 0 5vh;
-  min-height: 85vh;
-  background: $darkPurple;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  &__description {
-    font-size: 18px;
-    width: 40vw;
-    text-align: center;
-  }
-  &__header,
-  &__description {
-    color: #fff;
-  }
-  form {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding: 80px 30px 30px;
-    background-color: $formFill;
-    position: static;
-    width: 401px;
-    height: 370px;
-    left: 0px;
-    top: 0px;
-    border-radius: 13px;
-    input[type="text"],
-    input[type="email"],
-    input[type="submit"] {
-      height: 45px;
-      border-radius: $borderRadius;
-      padding: 13px;
-    }
-    input[type="text"],
-    input[type="email"] {
-      width: 100%;
-    }
-    input[type="submit"] {
-      width: 95px;
-      background-color: $aquaColor;
-      box-shadow: 0px 12px 44px rgba(56, 165, 219, 0.6);
-      color: #fff;
-      border-radius: 23px;
-      transition: $transition;
-      &:hover {
-        background: $aquaColorHover;
-      }
-    }
-    div {
-      display: flex;
-      align-items: center;
-      input[type="checkbox"] {
-        width: 24px;
-        height: 24px;
-        background-color: #fff;
-        border-radius: 4px;
-        vertical-align: middle;
-        border: 1px solid #fff;
-        -webkit-appearance: none;
-      }
-      label {
-        margin: 0 10px;
-        color: #fff;
-      }
-    }
-  }
-}
-footer {
-  background: linear-gradient(
-    180deg,
-    #fafbff 0%,
-    #eff1f9 41.68%,
-    #e9ecf6 49.59%,
-    #ced3e8 93.91%
-  );
-  height: 225px;
-  .footer,
-  .links {
-    width: 100vw;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 10vh 20vw;
-    &__layer1 &__layer2 {
-      p,
-      a:not(.logo) {
-        font-size: 18px;
-      }
-    }
-  }
-  .footer {
-    justify-content: space-between;
-    padding: 10px 100px;
-    &__email {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 0 0 0 100px;
-      * {
-        margin: 20px 0 0;
-      }
-      a {
-        color: $linkBlue;
-      }
-    }
-    &__wallpaperlink {
-      width: 220px;
-      height: 46px;
-      background-color: $aquaColor;
-      box-shadow: 0px 12px 44px rgba(56, 165, 219, 0.6);
-      color: #fff;
-      border-radius: 23px;
-      transition: $transition;
-      &:hover {
-        background: $aquaColorHover;
-      }
-    }
-  }
-  .links {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 40px 250px;
-  
-    &__layer1,
-    &__layer2 {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      width: 30vw;
-    }
-    &__layer1 {
-      p,
-      a {
-        color: $darkGrayishCyan;
-      }
-      p {
-        margin: 3px 0 0 0;
-        &:after {
-          @include footer-separator-links(5vw)
-        }
-      }
-      a {
-        &:after {
-          @include footer-separator-links(7vw)
-        }
-      }
-    }
-    &__layer2 {
-      a {
-        color: $darkGrayishCyan;
-        &:not(:last-child):after {
-          @include footer-separator-links(5vw)
-        }
-      }
-    }
+  justify-content: center;
+  a {
+    background: transparent;
+    border: 2px solid rgba(231, 231, 231, 0.3);
+    border-radius: 50%;
+    padding: 1.82vh 1.04vw;
   }
 }
 /* popup for teams members*/
@@ -495,382 +281,47 @@ footer {
   }
 }
 /*TABLET MODE*/
-@media (max-width: 1400px) and (min-width: 1000px) {
-  .contact {
-    padding: 5vh 0 5vh;
-    min-height: 50vh;
-  }
-}
-@media (max-width: 1023px) and (min-width: 767px) {
-  .contact {
-    padding: 5vh 0 5vh;
-    min-height: 65vh;
-    &__description {
-      width: 45vw;
-    }
-  }
-}
-@media (max-width: 420px)and (min-width: 321px){
-.main{
-  &__content{
-  min-height:110vh;
-  }
-  &__arrowDown{
-    margin:-50vh 0 10vh;
-  }
-}
-.team{
-  margin: 35vh 0 5vh;
-}
-.contact{
-  form{
-    height: 40vh;
-    input[type="text"],
-    input[type="email"],
-    input[type="submit"]{
-      height: 5vh;
-    }
-  }
-}
-}
-@media (max-width: 319px){
-  header,header.sticky{
-    a.logo{
-      font-size: medium;
-    }
-    nav{
-      ul{
-        li{
-          a{
-            font-size: small;
-          }
-        }
-      }
-    }
+@media(max-width:1200px)
+{
+  .container{
+    max-width: 970px;
   }
   .main{
     &__content{
-      min-height: 95vh;
-      .left{
-        &__message{
-          font-size:large;
-        }
-        &__subscribtionElement{
-          width: unset;
-         input{
-          width: 90vw;
-         }
-         
-        }
-        &__subscribe{
-          margin-top: 2vh;
-          p{
-            font-size: small;
-          }
-        }
-      }
-      .right{
-        padding: 0;
-      }
-    }
-    &__arrowDown{
-      margin: -43vh 0 2vh;
-      a{
-        padding: 10px;
-        i{
-          &::before{
-            font-size: 15px;
-          }
-        }
-      }
-    }
-  }
-   .team{
-     margin: 35vh 0vw 5vw;
-   }
-  footer{
-    .footer{
-      padding: 2vh 2vw;
-      &__logoContainer{
-        a.logo{
-          font-size: medium;
-        }
-      }
-    }
-    .links{
       flex-direction: column;
     }
-  }
-  .popup{
-    .description{
-      &__text{
-        font-size: medium;
+    .left{
+      width: 100vw;
+      padding: 0 0 2vh 0;
+      &__message{
+        font-size: 3.5vw;
+        max-width: 50vw;
+        line-height: 3.5vh;
+      }
+      &__subscribe{
+        margin-top: 4vh;
+        width: unset;
+      }
+      input{
+        width: 50vw;
+        height: 2vh;
+        padding: 2vh 3vw;
+      }
+      button{
+        height: 4vh;
       }
     }
   }
 }
-@media (max-width: 500px) and (min-width: 400px) {
-  .main {
-    &__content {
-      min-height: 100vh;
-    }
-    &__arrowDown {
-      margin: -47vh 0 10vh;
-    }
+@media(max-width:992px)
+{
+  .container{
+    max-width: 750px;
   }
 }
-@media (max-width: 550px) and (min-width: 280px) {
-  header,
-  header.sticky {
-    padding: 5px 1vw;
-    a.logo {
-      font-size: x-large;
-    }
-  }
-  .main {
-    &__content {
-      flex-direction: column;
-      padding: 0;
-      min-height: 130vh;
-      .left {
-        padding: 10vw;
-        &__message {
-          font-size: $fontSizeTablet;
-          padding: 3vw 0 0 0;
-          line-height: 32px;
-        }
-        &__subscribe {
-          margin-top: 5vh;
-          width: 85vw;
-          p {
-            font-size: 18px;
-          }
-        }
-        &__subscribtionElement {
-          flex-direction: column;
-          width: 100%;
-          align-items: center;
-          input,
-          button {
-            width: 90vw;
-            margin: 5px 0;
-            font-size: small;
-          }
-          button {
-            position: unset;
-          }
-        }
-      }
-      .right {
-        padding: 0;
-        align-items: center;
-        &__player {
-          width: 60vw;
-        }
-      }
-    }
-    &__arrowDown {
-      margin: -60vh 0 10vh;
-    }
-  }
-  .team{
-    padding: 0;
-    margin: 55vh 0vw 5vw;
-   &__members{
-     justify-content: unset;
-     div{
-       min-width: 100%;
-       padding: 0 20px;
-     }
-   }
-  }
-  .contact {
-    justify-content: space-around;
-    &__description {
-      width: 90vw;
-      font-size: small;
-    }
-    form {
-      width: 80vw;
-      height: 50vh;
-      input[type="text"],
-      input[type="submit"],
-      input[type="email"] {
-        height: 7vh;
-        font-size: small;
-      }
-    }
-  }
-  footer {
-    height: fit-content;
-    .footer {
-      flex-direction: column;
-      padding: 2vh 1vw;
-      &__logoContainer {
-        a.logo {
-          font-size: x-large;
-        }
-        width: 100%;
-      }
-      &__email {
-        margin: 0;
-        * {
-          margin: 0;
-        }
-      }
-      &__wallpaperlink {
-        width: 40vw;
-        height: 5vh;
-        margin-top: 3vh;
-        font-size: small;
-        padding: 0;
-      }
-    }
-    .links {
-      padding: 2vh 10px;
-      background: #fff;
-      flex-direction: column;
-      font-size: 12px;
-      &__layer1,
-      &__layer2 {
-        width: 100%;
-      }
-      &__layer1 {
-        flex-direction: row;
-        p,
-        a {
-          color: $darkGrayishCyan;
-          &::after {
-            @include no-separator;
-
-          }
-          &:first-child::after {
-            margin: 0 0 0 6vw;
-          }
-        }
-      }
-      &__layer2 {
-        flex-direction: row;
-        padding-left: 7vw;
-        p,
-        a {
-          color: $darkGrayishCyan;
-          &::after {
-            @include no-separator;
-          }
-          &:not(:last-child):after {
-            content: "";
-          }
-          &:first-child::after {
-            margin: 0 0 0 6vw;
-          }
-        }
-      }
-    }
-  }
-  .popup {
-    width: 90vw;
-    .name {
-      font-size: large;
-    }
-  }
-}
-@media (max-width: 1000px) {
-  footer {
-    p,
-    a {
-      font-size: small;
-    }
-  }
-}
-@media (max-width: 1025px)and (min-width: 551px)  {
-  header,
-  header.sticky {
-    padding: 5px 2vw;
-  }
-  .main {
-    &__content {
-      flex-direction: column;
-      padding: 0;
-      min-height: 101vh;
-      .left {
-        padding: 10vw;
-        &__message {
-          font-size: 40px;
-          padding: 3vw 0 0 0;
-        }
-        &__subscribe {
-          margin-top: 100px;
-          p {
-            font-size: 1.5em;
-          }
-        }
-        &__subscribtionElement {
-          width: 70vw;
-          input {
-            width: 60vw;
-          }
-        }
-      }
-      .right {
-        padding: 300px 0 0 0;
-        width: 100vw;
-        align-items: center;
-        &__player {
-          max-width: 65vw;
-        }
-      }
-    }
-    &__arrowDown {
-      margin: -50vh 0 2vh;
-    }
-  }
-  .team {
-    margin: 45vh 0vw 5vw;
-    &__members {
-      max-width: 100%;
-      display: flex;
-      width: unset;
-      overflow-x: scroll;
-      margin: 0;
-      justify-content: unset;
-      div {
-        min-width: 40vw;
-      }
-    }
-  }
-  footer {
-    padding: 0;
-    .footer {
-      padding: 0 2vw;
-    }
-    .links {
-      padding: 6vh 7vw 0vh;
-      flex-direction: row;
-      justify-content: center;
-      &__layer1 {
-        p,
-        a {
-          &:after {
-            margin-left: 3vw;
-          }
-        }
-      }
-      &__layer2 {
-        a {
-          &:not(:last-child):after {
-            @include footer-separator-links(3vw);
-          }
-        }
-      }
-    }
-  }
-  .popup {
-    width: 70vw;
-    .description {
-      &__text {
-        font-size: xx-large;
-      }
-    }
+@media(max-width:767px)
+{
+  .container{
+    max-width: none;
   }
 }

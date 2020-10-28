@@ -51,7 +51,7 @@ input[type="submit"] {
 .logo {
   font-family: "Montserrat", sans-serif;
   letter-spacing: 1px;
-  font-size: 2em;
+  font-size: 2.22vw;
 }
 
 #popupContainer {
@@ -215,10 +215,11 @@ header .headerContainer nav ul li:first-child a {
           flex-direction: row;
   position: relative;
   height: 5vh;
+  width: 40vw;
 }
 
 .main .left input {
-  width: 30vw;
+  width: 40vw;
   height: 5vh;
   border-radius: 25px;
   padding: 3vh 3vw;
@@ -251,7 +252,7 @@ header .headerContainer nav ul li:first-child a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 0 0 30vh 0;
+  padding: 0 0 10vh 0;
 }
 
 .main .right__player {
@@ -393,6 +394,9 @@ header .headerContainer nav ul li:first-child a {
 
 /*TABLET MODE*/
 @media (max-width: 1200px) {
+  .logo {
+    font-size: 3.5vw;
+  }
   .container {
     max-width: 970px;
   }
@@ -403,25 +407,38 @@ header .headerContainer nav ul li:first-child a {
             flex-direction: column;
   }
   .main .left {
-    width: 100vw;
     padding: 0 0 2vh 0;
   }
   .main .left__message {
-    font-size: 3.5vw;
-    max-width: 50vw;
-    line-height: 3.5vh;
+    font-size: 6vw;
+    max-width: 73vw;
   }
   .main .left__subscribe {
     margin-top: 4vh;
-    width: unset;
+    width: 80vw;
+    font-size: 2vw;
+  }
+  .main .left input,
+  .main .left button {
+    font-size: 2vw;
   }
   .main .left input {
-    width: 50vw;
+    width: 80vw;
     height: 2vh;
     padding: 2vh 3vw;
   }
   .main .left button {
     height: 4vh;
+    width: 13vw;
+  }
+  .main .left__subscribtionElement {
+    width: 70vw;
+  }
+  nav ul li {
+    margin: 0 1vw;
+  }
+  nav ul li a {
+    font-size: 2.5vw;
   }
 }
 

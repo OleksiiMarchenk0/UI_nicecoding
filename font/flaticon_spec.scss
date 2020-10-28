@@ -1,0 +1,14 @@
+@import "../styles/variables";
+
+@media (max-width: $tablet) {
+  [class^="flaticon-"]:before,
+  [class*=" flaticon-"]:before,
+  [class^="flaticon-"]:after,
+  [class*=" flaticon-"]:after {
+    font-size: 5vw;
+  }
+  [class^="flaticon-"],
+  [class*=" flaticon-"]{
+      padding: 1vh 1vw;
+  }
+}
